@@ -18,5 +18,6 @@
 ### Views
 * SongForm
 * SongShow
+* ArtistShow
 
 ## Gems/Libraries
