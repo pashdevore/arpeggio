@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://flux-capacitr.herokuapp.com
+[heroku]: http://www.arpeggio.xyz
 
 ## Minimum Viable Product
 Arpeggio is a clone of SoundCloud built on Rails and Backbone. Users can:
@@ -27,7 +27,7 @@ Arpeggio is a clone of SoundCloud built on Rails and Backbone. Users can:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication & JSON API (~1 day)
+### Phase 1: User Authentication & JSON API (~1-2 day)
 I will implement user authentication in Rails based on learned practices at App
 Academy. Users will be able to sign up and create and end sessions by the end of
 this phase. I will also implement the API routes to serve song data as JSON.
@@ -43,7 +43,7 @@ views for uploading new songs, showing songs, and showing artists.
 
 [Details][phase-two]
 
-### Phase 3: Editing and Playing Songs (~1 days)
+### Phase 3: Third-Party Libraries & Playing Songs (~1 days)
 In this phase I will begin to work with third-party libraries for handling song
 media file uploads and playing songs. I plan on incorporating the FilePicker
 library for file upload and the JPlayer library for playing songs.
@@ -53,18 +53,21 @@ library for file upload and the JPlayer library for playing songs.
 ### Phase 4: User Streams (~1-2 days)
 
 For this phase I'll create a `stream` route that uses the `current_user`'s
-`followed_artists` association to serve a list of artist's songs ordered
-chronologically. Then, within Backbone, I'll also make a `Stream` collection
-that fetches from the new route, then create a `StreamShow` view that uses the
-new collection. This will be the page the user is shown after logging in.
+`followed_artists` association to serve a list of artist's songs. Then, within
+Backbone, I'll also make a `Stream` collection that fetches from the new route,
+then create a `StreamShow` view that uses the new collection. This will be the
+page the user is shown after logging in.
 
 [Details][phase-four]
 
 ### Phase 5: Searching for Artists and Songs (~2 days)
 I'll need a `search` route that accepts a query in the params. Two queries will
-be run: one to find artists where the `username` matches the search term, and
-another to find songs where the `title` matches the search. In Backbone, a
-`SearchResults` view that will display both matched artists and matched songs
+be run:
+
+1. Find artists where the `username` matches the search
+2. Find songs where the `title` matches the search
+
+In Backbone, a `SearchResults` view that will display both matched artists and matched songs
 will be implemented. These will be separated into two columns and will be a
 composite view.
 
