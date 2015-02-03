@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       login(@user)
-      redirect_to posts_url
+      redirect_to root_url
     else
       @user = User.new
       render :new
