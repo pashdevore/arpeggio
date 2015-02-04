@@ -2,10 +2,10 @@
 
 ## Rails
 ### Models
+Search
 
 ### Controllers
-Api::ArtistsController (search)
-Api::SongsController (search)
+Api::SearchController (search)
 
 ### Views
 

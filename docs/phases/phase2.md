@@ -4,6 +4,7 @@
 ### Models
 
 ### Controllers
+Api::FollowingController
 
 ### Views
 

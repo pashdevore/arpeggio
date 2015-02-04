@@ -7,8 +7,8 @@
 ## Minimum Viable Product
 Arpeggio is a clone of SoundCloud built on Rails and Backbone. Users can:
 
-- [ ] Create accounts
-- [ ] Create sessions (log in)
+- [x] Create accounts
+- [x] Create sessions (log in)
 - [ ] Upload songs
 - [ ] Tag songs
 - [ ] View artists and songs
@@ -38,8 +38,10 @@ working before moving on.
 
 ### Phase 2: Song Storage and First Backbone Views (~2 days)
 I will add the Backbone models and collections that fetch data from the
-previously defined routes. By the end of this phase, there will be Backbone
-views for uploading new songs, showing songs, and showing artists.
+previously defined routes. I will also create a following controller that will
+be used for displaying followed user's songs in the stream. By the end of this
+phase, there will be Backbone views for uploading new songs, showing songs, and
+showing artists.
 
 [Details][phase-two]
 
@@ -61,13 +63,14 @@ page the user is shown after logging in.
 [Details][phase-four]
 
 ### Phase 5: Searching for Artists and Songs (~2 days)
-I'll need a `search` route that accepts a query in the params. Two queries will
-be run:
+I'll need a `search` controller and a `search` class. An instance of the class
+will take the query as a parameter and will perform two queries:
 
 1. Find artists where the `username` matches the search
 2. Find songs where the `title` matches the search
 
-In Backbone, a `SearchResults` view that will display both matched artists and matched songs
+The class will then return an object containing the results. In Backbone, a
+`SearchResults` view that will display both matched artists and matched songs
 will be implemented. These will be separated into two columns and will be a
 composite view.
 
