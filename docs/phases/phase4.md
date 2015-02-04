@@ -1,4 +1,4 @@
-# Phase 4: User Feeds
+# Phase 4: User Streams
 
 ## Rails
 ### Models

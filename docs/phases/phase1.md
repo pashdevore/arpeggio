@@ -1,5 +1,4 @@
-# Phase 1: User Authentication, Basic Blogs and Posts
-
+# Phase 1: User Authentication & JSON API 
 ## Rails
 ### Models
 * User
