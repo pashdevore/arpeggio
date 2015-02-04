@@ -199,7 +199,7 @@ DEPENDENCIES
   bcrypt
   better_errors
   binding_of_caller
-  bootstrap-sass
+  bootstrap-sass (~> 3.3.3)
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
@@ -208,7 +208,7 @@ DEPENDENCIES
   pg
   pry-rails
   rails (= 4.2.0)
-  sass-rails (~> 5.0)
+  sass-rails (>= 3.2)
   sdoc (~> 0.4.0)
   spring
   turbolinks

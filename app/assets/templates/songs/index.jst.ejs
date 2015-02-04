@@ -1,0 +1,8 @@
+<h1>Songs</h1>
+
+<ul>
+<% songs.each(function(song) { %>
+  <li><%= song.escape("title") %></li>
+  <li><%= song.escape("description") %></li>
+<% }) %>
+</ul>

@@ -4,7 +4,10 @@ window.Arpeggio = {
   Views: {},
   Routers: {},
   initialize: function() {
-    
+    new Arpeggio.Routers.Router({
+      $rootEl: $(".wrapper")
+    });
+    Backbone.history.start();
   }
 };
 
