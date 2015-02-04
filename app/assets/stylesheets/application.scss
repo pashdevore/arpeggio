@@ -14,6 +14,11 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ /* Import additional scss files */
+ @import "sessions";
+
+/* All Root Page CSS */
+
  * {
    padding: 0px;
    margin: 0px;
