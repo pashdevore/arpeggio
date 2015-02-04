@@ -5,7 +5,7 @@
 
   <ul class="songs-list list-group">
   <% songs.each(function(song) { %>
-    <li class="list-group-item"><%= song.escape("title") %></li>
+    <li class="list-group-item"><a href="#/songs/<%=song.id%>"><%= song.escape("title") %></a></li>
     <li class="list-group-item"><%= song.escape("description") %></li>
   <% }) %>
   </ul>

@@ -1,23 +1,30 @@
-class Api::SongsController < ApplicationController
-  def index
-    @songs = Song.all
-    render json: @songs
-  end
+module Api
+  class SongsController < ApiController
+    def index
+      @songs = Song.all
+      render json: @songs
+    end
 
-  def new
+    def show
+      @song = Song.find(params[:id])
+      render :show
+    end
 
-  end
+    def new
 
-  def update
+    end
 
-  end
+    def update
 
-  def destroy
+    end
 
-  end
+    def destroy
 
-  private
-  def user_params
-    params.require(:song).permit(:title, :description, :user_id)
+    end
+
+    private
+    def user_params
+      params.require(:song).permit(:title, :description, :user_id)
+    end
   end
 end

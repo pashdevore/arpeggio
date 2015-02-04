@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
   def new
+    if logged_in?
+      redirect_to root_url
+    end
+
     @user = User.new
   end
 
   def create
-    debugger
     @user = User.new(user_params)
 
     if @user.save

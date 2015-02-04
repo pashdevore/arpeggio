@@ -5,9 +5,10 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "index",
-    "songs/new": "new",
-    "songs/:id": "show",
-    "songs/:id/edit": "edit"
+    "songs/new": "song_new",
+    "songs/:id": "song_show",
+    "songs/:id/edit": "song_edit",
+    "profiles/:id": "profile_show"
   },
 
   index: function(){
@@ -20,21 +21,37 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  new: function(){
+  song_new: function(){
 
   },
 
-  edit: function(id){
+  song_edit: function(id){
 
   },
 
-  show: function(id){
+  song_show: function(id){
+    var song = Arpeggio.Collections.songs.getOrFetch(id);
 
+    var view = new Arpeggio.Views.SongShow({
+      model: song
+    });
+
+    this._swapView(view);
   },
+
+  profile_show: function(id){
+    var profile = Arpeggio.Collections.profiles.getOrFetch(id);
+
+    var view = new Arpeggio.Views.ProfileShow({
+      model: profile
+    });
+
+    this._swapView(view);
+  }
 
   _swapView: function(view){
-    this._currentView && this._currentView.remove();
-    this._currentView = view;
+    this.currentView && this.currentView.remove();
+    this.currentView = view;
     this.$rootEl.html(view.render().$el);
   }
 });

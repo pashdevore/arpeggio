@@ -6,11 +6,11 @@ Arpeggio.Views.SongsIndex = Backbone.View.extend({
   },
 
   render: function(){
-    var content = this.template({
+    var renderedContent = this.template({
       songs: this.collection
     });
 
-    this.$el.html(content);
+    this.$el.html(renderedContent);
     return this;
   }
 });

@@ -1,5 +1,5 @@
 Arpeggio.Collections.Songs = Backbone.Collection.extend({
-  url: "/api/songs",
+  url: "api/songs",
   model: Arpeggio.Models.Song,
 
   comparator: function(){
@@ -8,10 +8,11 @@ Arpeggio.Collections.Songs = Backbone.Collection.extend({
 
   getOrFetch: function(id){
     var song = this.get(id);
-    var song = this;
+    var songs = this;
 
     if(!song){
       song = new Arpeggio.Models.Song({ id: id });
+
       song.fetch({
         success: function(){
           songs.add(song);

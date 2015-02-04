@@ -21,7 +21,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    debugger
     @user = current_user
 
     logout(current_user)

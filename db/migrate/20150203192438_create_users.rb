@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :username, null: false, unique: true
       t.string :password_digest, null: false
       t.string :session_token, null: false
-      t.string :gravatar_url
+      t.string :profile_id, null: false
 
       t.timestamps null: false
     end
