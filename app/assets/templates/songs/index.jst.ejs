@@ -1,8 +1,10 @@
-<h1>Songs</h1>
+<div class="songs-list-wrapper">
+  <h1>Songs</h1>
 
-<ul>
-<% songs.each(function(song) { %>
-  <li><%= song.escape("title") %></li>
-  <li><%= song.escape("description") %></li>
-<% }) %>
-</ul>
+  <ul class="songs-list list-group">
+  <% songs.each(function(song) { %>
+    <li class="list-group-item"><%= song.escape("title") %></li>
+    <li class="list-group-item"><%= song.escape("description") %></li>
+  <% }) %>
+  </ul>
+</div>

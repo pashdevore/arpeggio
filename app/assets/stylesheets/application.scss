@@ -13,3 +13,19 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ * {
+   padding: 0px;
+   margin: 0px;
+   border: 0px;
+ }
+
+ div.wrapper{
+   max-width: 960px;
+   margin: 0 auto;
+ }
+
+.songs-list-wrapper{
+  margin-top: 51px;
+  padding-top: 20px;
+}
