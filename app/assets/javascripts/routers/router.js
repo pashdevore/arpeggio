@@ -47,11 +47,11 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(view);
-  }
+  },
 
   _swapView: function(view){
-    this.currentView && this.currentView.remove();
-    this.currentView = view;
+    this._currentView && this._currentView.remove();
+    this._currentView = view;
     this.$rootEl.html(view.render().$el);
   }
 });
