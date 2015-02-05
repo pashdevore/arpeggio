@@ -5,7 +5,7 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "stream",
-    "upload": "upload",
+    "songs/new": "upload",
     "profiles/:id": "profile_show",
     "songs/:id": "song_show",
     "songs/:id/edit": "song_edit",
