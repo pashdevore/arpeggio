@@ -7,8 +7,8 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
     "": "index",
     "songs/new": "song_new",
     "songs/:id": "song_show",
+    "profiles/:id": "profile_show",
     "songs/:id/edit": "song_edit",
-    "profiles/:id": "profile_show"
   },
 
   index: function(){

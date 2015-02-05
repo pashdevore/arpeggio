@@ -4,7 +4,7 @@ Arpeggio.Collections.Profiles = Backbone.Collection.extend({
 
   getOrFetch: function(id){
     var profile = this.get(id);
-    var profile = this;
+    var profiles = this;
 
     if(!profile){
       profile = new Arpeggio.Models.Profile({ id: id });
@@ -21,3 +21,5 @@ Arpeggio.Collections.Profiles = Backbone.Collection.extend({
     return profile;
   }
 });
+
+Arpeggio.Collections.profiles = new Arpeggio.Collections.Profiles();

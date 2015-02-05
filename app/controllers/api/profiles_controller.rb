@@ -1,5 +1,10 @@
 module Api
-  class ProfileController < ApiController
+  class ProfilesController < ApiController
+    def index
+      @profiles = Profile.all
+      render json: @profiles
+    end
+
     def new
       @profile = Profile.new
     end
@@ -23,7 +28,7 @@ module Api
     def destroy
       @profile = Profile.find(params[:id])
       @profile.destroy
-      
+
     end
 
     private
