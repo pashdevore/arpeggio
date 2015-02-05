@@ -22,7 +22,13 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
   },
 
   song_new: function(){
+    var song = new Arpeggio.Models.Song();
 
+    var view = new Arpeggio.Views.SongsForm({
+      model: song
+    });
+
+    this._swapView(view);
   },
 
   song_edit: function(id){

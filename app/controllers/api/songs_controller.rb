@@ -11,7 +11,18 @@ module Api
     end
 
     def new
+      @song = Song.new
+    end
 
+    def create
+      @song = Song.new(user_params)
+
+      if @song.save
+        redirect_to root_url
+      else
+        @song = Song.new
+        render :new
+      end
     end
 
     def update

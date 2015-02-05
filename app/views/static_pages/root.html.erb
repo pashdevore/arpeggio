@@ -13,7 +13,7 @@
       <ul class="nav navbar-nav navbar-left">
         <li><a href="#">Stream</a></li>
         <li><a href="#/profiles/<%=current_user.id%>">Profile</a></li>
-        <li><a href="#">Upload</a></li>
+        <li><a href="#/songs/new">Upload</a></li>
       </ul>
 
       <!-- TODO: form for searching songs/artists -->
@@ -29,5 +29,5 @@
   </div>
 </div>
 
-<div class="wrapper">
+<div class="wrapper" data-user-id="<%=current_user.id%>">
 </div>
