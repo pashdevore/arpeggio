@@ -11,6 +11,18 @@ password_digest | string    | not null
 session_token   | string    | not null, unique
 gravatar_url    | string    | not null, unique
 
+## profile
+
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+first_name      | string    | not null
+last_name       | string    | not null
+gravatar_url    | string    |
+city            | string    |
+state           | string    |
+country         | string    |
+
 ## song
 column name | data type | details
 ------------|-----------|-----------------------
