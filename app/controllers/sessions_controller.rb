@@ -10,11 +10,9 @@ class SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:username],
     params[:user][:password])
     if @user
-      puts "were in!"
       login(@user)
       redirect_to root_url
     else
-      puts "nope"
       @user = User.new
       render :new
     end

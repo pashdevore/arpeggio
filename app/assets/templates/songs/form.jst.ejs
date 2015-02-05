@@ -10,14 +10,7 @@
   <textarea class="form-control" name="description" rows="3" id="description" placeholder="Description"><%=song.escape('description')%></textarea>
 </div>
 <div class="form-group">
-
   <a href="#" id="upload_widget_opener">Upload multiple images</a>
-
-  <label for="fileUpload">Choose File</label>
-  <input name="file" type="file"
-  class="cloudinary-fileupload" data-cloudinary-field="image_id"
-  data-form-data=""></input>
-
 </div>
 
 <button type="submit" class="btn btn-default">Submit</button>
@@ -28,7 +21,13 @@
 document.getElementById("upload_widget_opener").addEventListener("click", function() {
 
   cloudinary.openUploadWidget({ cloud_name: 'arpeggio', upload_preset: 'wnoych6m'},
-  function(error, result) { console.log(error, result) });
+  function(error, result) {
+    if (error) {
+      console.log("Something went wrong...");
+    } else {
+      
+    }
+  });
 
 }, false);
 </script>
