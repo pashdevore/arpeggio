@@ -18,7 +18,7 @@ module Api
       @song = Song.new(user_params)
 
       if @song.save
-        redirect_to root_url
+        render json: @song
       else
         @song = Song.new
         render :new
@@ -26,7 +26,7 @@ module Api
     end
 
     def update
-
+      @song = Song.find(params[:id])
     end
 
     def destroy

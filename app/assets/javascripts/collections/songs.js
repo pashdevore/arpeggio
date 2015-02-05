@@ -2,9 +2,7 @@ Arpeggio.Collections.Songs = Backbone.Collection.extend({
   url: "api/songs",
   model: Arpeggio.Models.Song,
 
-  comparator: function(){
-
-  },
+  comparator: "updated_at",
 
   getOrFetch: function(id){
     var song = this.get(id);

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :songs
   has_one :profile
+  belongs_to :following
 
   after_initialize :ensure_session_token
 

@@ -4,14 +4,14 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "": "index",
-    "songs/new": "song_new",
-    "songs/:id": "song_show",
+    "": "stream",
+    "upload": "upload",
     "profiles/:id": "profile_show",
+    "songs/:id": "song_show",
     "songs/:id/edit": "song_edit",
   },
 
-  index: function(){
+  stream: function(){
     Arpeggio.Collections.songs.fetch();
 
     var view = new Arpeggio.Views.SongsIndex({
@@ -21,11 +21,12 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  song_new: function(){
+  upload: function(){
     var song = new Arpeggio.Models.Song();
 
     var view = new Arpeggio.Views.SongsForm({
-      model: song
+      model: song,
+      collection: Arpeggio.Collections.songs
     });
 
     this._swapView(view);

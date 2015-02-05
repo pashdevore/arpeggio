@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   resource :session
 
   namespace :api, defaults: { format: :json } do
-    resources :songs
+    resources :songs do
+      post 'upload', to: 'songs#new'
+    end
+
     resources :profiles, only: [:index, :show, :edit, :new, :destroy]
   end
 end

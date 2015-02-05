@@ -5,8 +5,30 @@
 
   <ul class="songs-list list-group">
   <% songs.each(function(song) { %>
-    <li class="list-group-item"><a href="#/songs/<%=song.id%>"><%= song.escape("title") %></a></li>
-    <li class="list-group-item"><%= song.escape("description") %></li>
+
+    <% if(song.escape('user_id') === $('.wrapper').attr('data-user-id')) { %>
+
+    <li class="list-group-item">
+      <img src="http://upload.wikimedia.org/wikipedia/en/8/8a/Theresistance.jpg" alt="Muse - Resistance" class="img-rounded">
+      <a href="#/songs/<%=song.id%>">
+        <%= song.escape("title") %>
+      </a>
+
+
+      <audio controls>
+        <source src="" type="audio/mp4">
+        Your browser does not support the audio element.
+      </audio>
+
+      <!-- Represents number of likes -->
+      <span class="badge">120</span>
+    </li>
+    <li class="list-group-item">
+      <%= song.escape("description") %>
+    </li>
+    <br><br>
+
+    <% } %>
   <% }) %>
   </ul>
 </div>
