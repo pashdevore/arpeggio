@@ -28,7 +28,16 @@ module Api
     def destroy
       @profile = Profile.find(params[:id])
       @profile.destroy
+    end
 
+    def update
+      @profile = Profile.find(params[:id])
+
+      if @profile.update_attributes(profile_params)
+        render :show
+      else
+        redirect_to root_url
+      end
     end
 
     private

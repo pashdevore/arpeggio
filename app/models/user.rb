@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  profile_id      :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ActiveRecord::Base
   attr_reader :password
 
@@ -6,6 +19,25 @@ class User < ActiveRecord::Base
 
   has_many :songs
   has_one :profile
+
+  has_many(
+  :user_following,
+  class_name: "UserFollow",
+  foreign_key: :follower_id,
+  primary_key: :id,
+  inverse_of: :follower
+  )
+
+  has_many(
+  :user_followers,
+  class_name: "UserFollow",
+  foreign_key: :following_id,
+  primary_key: :id,
+  inverse_of: :following
+  )
+
+  has_many :following, through: :user_following, source: :following
+  has_many :followers, through: :user_followers, source: :follower
 
   after_initialize :ensure_session_token
 

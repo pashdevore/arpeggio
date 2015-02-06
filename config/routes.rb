@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :songs
-    resources :profiles, only: [:index, :show, :edit, :new, :destroy]
+    resources :profiles
+    resources :song_likes
+    resources :tags
+    resources :taggings
   end
 end

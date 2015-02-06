@@ -9,6 +9,7 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
     "profiles/:id": "profile_show",
     "songs/:id": "song_show",
     "songs/:id/edit": "song_edit",
+    "profiles/:id/edit": "profile_edit"
   },
 
   stream: function(){
@@ -51,6 +52,17 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
 
     var view = new Arpeggio.Views.ProfileShow({
       model: profile
+    });
+
+    this._swapView(view);
+  },
+
+  profile_edit: function(id){
+    var profile = Arpeggio.Collections.profiles.getOrFetch(id);
+
+    var view = new Arpeggio.Views.ProfilesForm({
+      model: profile,
+      collection: Arpeggio.Collections.profiles
     });
 
     this._swapView(view);

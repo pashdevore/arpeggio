@@ -11,17 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204221706) do
+ActiveRecord::Schema.define(version: 20150206162340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "followings", force: :cascade do |t|
-    t.integer  "user_id",     null: false
-    t.integer  "follower_id", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
 
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name",   null: false
@@ -34,12 +27,23 @@ ActiveRecord::Schema.define(version: 20150204221706) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "song_likes", force: :cascade do |t|
+    t.integer  "song_id",    null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "songs", force: :cascade do |t|
-    t.integer  "user_id",     null: false
-    t.string   "title",       null: false
-    t.string   "description", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "user_id",       null: false
+    t.string   "title",         null: false
+    t.string   "description",   null: false
+    t.string   "image_url",     null: false
+    t.string   "thumbnail_url", null: false
+    t.integer  "image_height",  null: false
+    t.integer  "image_width",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -55,11 +59,18 @@ ActiveRecord::Schema.define(version: 20150204221706) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_follows", force: :cascade do |t|
+    t.integer  "follower_id",  null: false
+    t.integer  "following_id", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
     t.string   "password_digest", null: false
     t.string   "session_token",   null: false
-    t.string   "gravatar_url"
+    t.string   "profile_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

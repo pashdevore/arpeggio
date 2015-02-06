@@ -15,7 +15,8 @@ module Api
     end
 
     def create
-      @song = Song.new(user_params)
+      debugger
+      @song = Song.new(song_params)
 
       if @song.save
         render json: @song
@@ -34,8 +35,8 @@ module Api
     end
 
     private
-    def user_params
-      params.require(:song).permit(:title, :description, :user_id)
+    def song_params
+      params.require(:song).permit(:title, :description, :user_id, :image_url, :thumbnail_url, :image_width, :image_height)
     end
   end
 end

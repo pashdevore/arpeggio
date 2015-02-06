@@ -1,7 +1,9 @@
-<% $.cloudinary.config({ cloud_name: 'arpeggio', api_key: '933224247549886'}) %>
-
 <div class="form-group">
   <input type="hidden" name="user_id" value="<%= $('.wrapper').attr('data-user-id') %>">
+  <input type="hidden" class="img_url" name="image_url" value="">
+  <input type="hidden" class="thumb_url" name="thumbnail_url" value="">
+  <input type="hidden" class="img_width" name="image_width" value="">
+  <input type="hidden" class="img_height" name="image_height" value="">
   <label for="title">Title</label>
   <input type="text" name="title" class="form-control" id="title" value="<%=song.escape('title')%>" placeholder="Song Title">
 </div>
@@ -25,9 +27,14 @@ document.getElementById("upload_widget_opener").addEventListener("click", functi
     if (error) {
       console.log("Something went wrong...");
     } else {
-      
+      //Success!!!
+      console.log(result);
+      debugger
+      $(".img_url").attr('value', result[0].url);
+      $(".thumb_url").attr('value', result[0].thumbnail_url);
+      $(".img_height").attr('value', result[0].height);
+      $(".img_width").attr('value', result[0].width);
     }
   });
-
 }, false);
 </script>

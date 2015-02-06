@@ -1,11 +1,10 @@
-Arpeggio.Views.SongsForm = Backbone.View.extend({
-  template: JST['songs/form'],
+Arpeggio.Views.ProfilesForm = Backbone.View.extend({
+  template: JST['profiles/form'],
   tagName: 'form',
   className: 'song-new',
 
   events: {
     "click button": "submit",
-    "click #upload_widget_opener": "upload"
   },
 
   initialize: function(){
@@ -14,20 +13,15 @@ Arpeggio.Views.SongsForm = Backbone.View.extend({
 
   render: function(){
     var renderedContent = this.template({
-      song: this.model
+      profile: this.model
     });
 
     this.$el.html(renderedContent);
     return this;
   },
 
-  upload: function (event) {
-    event.preventDefault();
-  },
-
   submit: function (event) {
     event.preventDefault();
-    debugger
     var attrs = this.$el.serializeJSON();
 
     var that = this;
