@@ -15,7 +15,6 @@ module Api
     end
 
     def create
-      debugger
       @song = Song.new(song_params)
 
       if @song.save

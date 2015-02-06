@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'aws-sdk'
 gem 'backbone-on-rails'
 gem 'bcrypt'
 gem 'bootstrap-sass', '~> 3.3.3'
@@ -23,6 +24,5 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'byebug'
   gem 'pry-rails'
-  gem 'spring'
   gem 'web-console', '~> 2.0'
 end

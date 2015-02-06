@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20150206162340) do
   enable_extension "plpgsql"
 
   create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id",      null: false
     t.string   "first_name",   null: false
     t.string   "last_name",    null: false
     t.string   "gravatar_url"
@@ -70,7 +71,6 @@ ActiveRecord::Schema.define(version: 20150206162340) do
     t.string   "username",        null: false
     t.string   "password_digest", null: false
     t.string   "session_token",   null: false
-    t.string   "profile_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

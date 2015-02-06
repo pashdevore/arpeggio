@@ -9,3 +9,19 @@ div.page-header{
 form.song-new{
   margin-top: 81px;
 }
+
+audio.song-show-player{
+  margin-top: 10px;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+}
+
+.song-show-image{
+  height: 300px;
+  margin: 20px auto;
+  position: relative;
+  display: block;
+}

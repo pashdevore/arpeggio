@@ -27,7 +27,6 @@ Arpeggio.Views.SongsForm = Backbone.View.extend({
 
   submit: function (event) {
     event.preventDefault();
-    debugger
     var attrs = this.$el.serializeJSON();
 
     var that = this;
