@@ -5,6 +5,7 @@ Arpeggio.Views.ProfilesForm = Backbone.View.extend({
 
   events: {
     "click button": "submit",
+    "click #upload_widget_opener": "upload"
   },
 
   initialize: function(){
@@ -36,5 +37,9 @@ Arpeggio.Views.ProfilesForm = Backbone.View.extend({
         console.log("error");
       }
     });
+  },
+
+  upload: function (event) {
+    event.preventDefault();
   }
 });

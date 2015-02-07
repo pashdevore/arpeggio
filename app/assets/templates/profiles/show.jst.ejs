@@ -1,7 +1,13 @@
 <div class="page-header">
   <h1><%= profile.escape('first_name') %> <small><%= profile.escape('last_name') %></small></h1>
 </div>
-<img src="<%= profile.escape('gravatar_url') %>" class="img-responsive" alt="Responsive image">
+
+<% if(profile.escape('gravatar_url')) { %>
+  <img src="<%= profile.escape('gravatar_url') %>" class="img-responsive" alt="profile picture">
+<% } else { %>
+  <img src="/assets/missing_gravatar.jpg" class="profile-img img-responsive" alt="profile picture">
+<% } %>
+
 <ul class="profile-list list-group">
 
   <li class="list-group-item">
@@ -18,4 +24,8 @@
 
 </ul>
 
-<a href="#/profiles/<%=profile.escape('id')%>/edit">Edit</a>
+<% if(profile.escape('user_id') !== $('.wrapper').attr('data-user-id')){ %>
+  <button type="button" class="btn btn-default subscribe" data-user-id="<%=profile.escape('user_id') %>">Subscribe</button>
+<% } else { %>
+  <a href="#/profiles/<%=profile.escape('id')%>/edit">Edit</a>
+<% } %>
