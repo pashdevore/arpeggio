@@ -18,7 +18,6 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
 
   has_many :songs
-  has_one :profile
 
   has_many(
   :user_following,

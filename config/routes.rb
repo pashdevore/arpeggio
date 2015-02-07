@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resource :session
 
   namespace :api, defaults: { format: :json } do
+    resources :users
     resources :songs
-    resources :profiles
     resources :song_likes
     resources :tags
     resources :taggings

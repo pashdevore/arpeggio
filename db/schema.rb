@@ -16,18 +16,6 @@ ActiveRecord::Schema.define(version: 20150206162340) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "profiles", force: :cascade do |t|
-    t.integer  "user_id",      null: false
-    t.string   "first_name",   null: false
-    t.string   "last_name",    null: false
-    t.string   "gravatar_url"
-    t.string   "city"
-    t.string   "state"
-    t.string   "country"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "song_likes", force: :cascade do |t|
     t.integer  "song_id",    null: false
     t.integer  "user_id",    null: false
@@ -41,8 +29,6 @@ ActiveRecord::Schema.define(version: 20150206162340) do
     t.string   "description",   null: false
     t.string   "image_url",     null: false
     t.string   "thumbnail_url", null: false
-    t.integer  "image_height",  null: false
-    t.integer  "image_width",   null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -71,6 +57,18 @@ ActiveRecord::Schema.define(version: 20150206162340) do
     t.string   "username",        null: false
     t.string   "password_digest", null: false
     t.string   "session_token",   null: false
+    t.string   "avatar_url"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.text     "biography"
+    t.string   "website_url"
+    t.string   "facebook_url"
+    t.string   "twitter_url"
+    t.string   "youtube_url"
+    t.string   "instagram_url"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

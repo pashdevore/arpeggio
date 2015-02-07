@@ -1,5 +1,5 @@
-Arpeggio.Models.Profile = Backbone.Model.extend({
-  urlRoot: "api/profiles",
+Arpeggio.Models.User = Backbone.Model.extend({
+  urlRoot: "users",
 
   songs: function () {
     if(!this._songs){

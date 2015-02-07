@@ -1,8 +1,8 @@
-<% if(profile.escape('gravatar_url')) { %>
+<% if(user.escape('gravatar_url')) { %>
   <a href="#" id="upload_widget_opener">
-    <img src="<%= profile.escape('gravatar_url') %>" class="img-responsive" alt="profile picture">
+    <img src="<%= user.escape('avatar_url') %>" class="img-responsive" alt="profile picture">
   </a>
-  <input type="hidden" class="gravatar_url" name="gravatar_url" value="<%=profile.escape('gravatar_url')%>">
+  <input type="hidden" class="gravatar_url" name="gravatar_url" value="<%=user.escape('avatar_url')%>">
 <% } else { %>
   <a href="#" id="upload_widget_opener">
     <img src="/assets/missing_gravatar.jpg" class="profile-img img-responsive" alt="profile picture">
@@ -12,27 +12,27 @@
 
   <div class="form-group">
     <label for="profile-fname">First Name</label>
-    <input type="text" name="first_name" class="form-control" id="profile-fname" value="<%=profile.escape('first_name')%>" placeholder="First Name">
+    <input type="text" name="first_name" class="form-control" id="profile-fname" value="<%=user.escape('first_name')%>" placeholder="First Name">
   </div>
 
   <div class="form-group">
     <label for="profile-lname">Last Name</label>
-    <input type="text" name="last_name" class="form-control" id="profile-lname" value="<%=profile.escape('last_name')%>" placeholder="Last Name">
+    <input type="text" name="last_name" class="form-control" id="profile-lname" value="<%=user.escape('last_name')%>" placeholder="Last Name">
   </div>
 
   <div class="form-group">
     <label for="profile-city">City</label>
-    <input type="text" name="city" class="form-control" id="profile-city" value="<%=profile.escape('city')%>" placeholder="City">
+    <input type="text" name="city" class="form-control" id="profile-city" value="<%=user.escape('city')%>" placeholder="City">
   </div>
 
   <div class="form-group">
     <label for="profile-state">State</label>
-    <input type="text" name="state" class="form-control" id="profile-state" value="<%=profile.escape('state')%>" placeholder="State">
+    <input type="text" name="state" class="form-control" id="profile-state" value="<%=user.escape('state')%>" placeholder="State">
   </div>
 
   <div class="form-group">
     <label for="profile-country">Country</label>
-    <input type="text" name="country" class="form-control" id="profile-country" value="<%=profile.escape('country')%>" placeholder="Country">
+    <input type="text" name="country" class="form-control" id="profile-country" value="<%=user.escape('country')%>" placeholder="Country">
   </div>
 
   <button type="submit" class="btn btn-default">Submit</button>

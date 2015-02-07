@@ -6,10 +6,10 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
   routes: {
     "": "stream",
     "songs/new": "upload",
-    "profiles/:id": "profile_show",
+    "users/:id": "user_show",
     "songs/:id": "song_show",
     "songs/:id/edit": "song_edit",
-    "profiles/:id/edit": "profile_edit"
+    "users/:id/edit": "user_edit"
   },
 
   stream: function(){
@@ -47,22 +47,22 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  profile_show: function(id){
-    var profile = Arpeggio.Collections.profiles.getOrFetch(id);
+  user_show: function(id){
+    var user = Arpeggio.Collections.users.getOrFetch(id);
 
-    var view = new Arpeggio.Views.ProfileShow({
-      model: profile
+    var view = new Arpeggio.Views.UserShow({
+      model: user
     });
 
     this._swapView(view);
   },
 
-  profile_edit: function(id){
-    var profile = Arpeggio.Collections.profiles.getOrFetch(id);
+  user_edit: function(id){
+    var user = Arpeggio.Collections.users.getOrFetch(id);
 
-    var view = new Arpeggio.Views.ProfilesForm({
-      model: profile,
-      collection: Arpeggio.Collections.profiles
+    var view = new Arpeggio.Views.UsersForm({
+      model: user,
+      collection: Arpeggio.Collections.users
     });
 
     this._swapView(view);

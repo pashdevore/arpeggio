@@ -21,7 +21,12 @@ module Api
     end
 
     def show
+      debugger
       @profile = Profile.find(params[:id])
+      @user = User.find(@profile.user_id)
+      @songs = @user.songs
+      @followers = @user.followers
+      @following = @user.following
       render :show
     end
 

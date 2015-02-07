@@ -6,8 +6,6 @@ class CreateSongs < ActiveRecord::Migration
       t.string :description, null: false
       t.string :image_url, null: false
       t.string :thumbnail_url, null: false
-      t.integer :image_height, null: false
-      t.integer :image_width, null: false
 
       t.timestamps null: false
     end

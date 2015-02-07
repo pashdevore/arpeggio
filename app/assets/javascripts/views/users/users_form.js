@@ -1,5 +1,5 @@
-Arpeggio.Views.ProfilesForm = Backbone.View.extend({
-  template: JST['profiles/form'],
+Arpeggio.Views.UsersForm = Backbone.View.extend({
+  template: JST['users/form'],
   tagName: 'form',
   className: 'song-new',
 
@@ -14,7 +14,7 @@ Arpeggio.Views.ProfilesForm = Backbone.View.extend({
 
   render: function(){
     var renderedContent = this.template({
-      profile: this.model
+      user: this.model
     });
 
     this.$el.html(renderedContent);
@@ -30,7 +30,7 @@ Arpeggio.Views.ProfilesForm = Backbone.View.extend({
     this.model.set(attrs);
     this.model.save({}, {
       success: function(){
-        that.collection.add(that.model, { merge: true } );
+        // that.collection.add(that.model, { merge: true } );
         Backbone.history.navigate("", { trigger: true } );
       },
       error: function(){

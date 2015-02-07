@@ -1,5 +1,5 @@
-Arpeggio.Views.ProfileShow = Backbone.View.extend({
-  template: JST['profiles/show'],
+Arpeggio.Views.UserShow = Backbone.View.extend({
+  template: JST['users/show'],
 
   events: {
     "click .subscribe": "subscribe"
@@ -11,7 +11,7 @@ Arpeggio.Views.ProfileShow = Backbone.View.extend({
 
   render: function () {
     var renderedContent = this.template({
-      profile: this.model
+      user: this.model
     });
 
     this.$el.html(renderedContent);
