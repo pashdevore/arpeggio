@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
 
   has_many :following, through: :user_following, source: :following
   has_many :followers, through: :user_followers, source: :follower
+  has_many :stream_songs, through: :following, source: :songs
 
   after_initialize :ensure_session_token
 

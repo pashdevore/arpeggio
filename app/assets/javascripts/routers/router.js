@@ -13,10 +13,11 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
   },
 
   stream: function(){
-    var stream = new Arpeggio.Models.Stream();
+    var stream = new Arpeggio.Collections.Stream();
+    stream.fetch();
 
-    var view = new Arpeggio.Views.StreamShow({
-      model: stream
+    var view = new Arpeggio.Views.StreamIndex({
+      collection: stream
     });
 
     this._swapView(view);

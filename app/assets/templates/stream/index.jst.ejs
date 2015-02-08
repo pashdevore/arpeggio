@@ -1,0 +1,9 @@
+<div class="songs-list-wrapper">
+  <div class="page-header">
+    <h1>Songs <small>some of em'</small></h1>
+    <% debugger %>
+    <% stream.each( function (song) { %>
+      <h1><%= song.escape('title') %><small><%= song.escape('description') %></h1>
+    <% }) %>
+  </div>
+</div>
