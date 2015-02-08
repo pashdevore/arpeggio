@@ -12,27 +12,37 @@
 
   <div class="form-group">
     <label for="profile-fname">First Name</label>
-    <input type="text" name="first_name" class="form-control" id="profile-fname" value="<%=user.escape('first_name')%>" placeholder="First Name">
+    <input type="text" name="first_name" class="form-control" id="profile-fname" value="<%=user.escape('first_name')%>" placeholder="John">
   </div>
 
   <div class="form-group">
     <label for="profile-lname">Last Name</label>
-    <input type="text" name="last_name" class="form-control" id="profile-lname" value="<%=user.escape('last_name')%>" placeholder="Last Name">
+    <input type="text" name="last_name" class="form-control" id="profile-lname" value="<%=user.escape('last_name')%>" placeholder="Smith">
   </div>
 
   <div class="form-group">
     <label for="profile-city">City</label>
-    <input type="text" name="city" class="form-control" id="profile-city" value="<%=user.escape('city')%>" placeholder="City">
+    <input type="text" name="city" class="form-control" id="profile-city" value="<%=user.escape('city')%>" placeholder="Reno">
   </div>
 
   <div class="form-group">
     <label for="profile-state">State</label>
-    <input type="text" name="state" class="form-control" id="profile-state" value="<%=user.escape('state')%>" placeholder="State">
+    <input type="text" name="state" class="form-control" id="profile-state" value="<%=user.escape('state')%>" placeholder="Nevada">
   </div>
 
   <div class="form-group">
     <label for="profile-country">Country</label>
-    <input type="text" name="country" class="form-control" id="profile-country" value="<%=user.escape('country')%>" placeholder="Country">
+    <input type="text" name="country" class="form-control" id="profile-country" value="<%=user.escape('country')%>" placeholder="United States">
+  </div>
+
+  <div class="form-group">
+    <label for="profile-bio">Biography</label>
+    <textarea name="biography" class="form-control" id="profile-bio" rows="3" placeholder="A quick bit about yourself"><%=user.escape('biography')%></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="profile-website">Website</label>
+    <input type="text" name="website_url" class="form-control" id="profile-website" value="<%=user.escape('website_url') %>" placeholder="http://www.example.com">
   </div>
 
   <button type="submit" class="btn btn-default">Submit</button>

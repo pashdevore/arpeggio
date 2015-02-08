@@ -39,6 +39,15 @@
    margin: 0 auto;
  }
 
+ audio.song-show-player-footer{
+   margin-top: 10px;
+   display: block;
+   position: relative;
+   margin-left: auto;
+   margin-right: auto;
+   width: inherit;
+ }
+
  form.navbar-left {
    width: 100px;
  }
@@ -53,12 +62,20 @@ img {
   margin: 5px 10px;
 }
 
-audio{
-  width: 500px;
-}
-
 img.img-responsive{
   height: 200px;
   display: block;
   margin: 20px auto;
+}
+
+ul.profile-list.list-group{
+  padding-bottom: 10px;
+}
+
+.edit{
+  padding-bottom: 80px;
+}
+
+.subscribe{
+  padding-bottom: 80px;
 }

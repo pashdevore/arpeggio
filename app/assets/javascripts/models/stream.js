@@ -1,5 +1,5 @@
 Arpeggio.Models.Stream = Backbone.Model.extend({
-  urlRoot: "api/stream",
+  urlRoot: "api/streams",
 
   songs: function () {
     if(!this._songs){
@@ -23,5 +23,24 @@ Arpeggio.Models.Stream = Backbone.Model.extend({
     }
 
     return this._followers;
+  },
+
+  parse: function (response) {
+    if(response.songs) {
+      this.songs().set(response.songs, { parse: true });
+      delete response.songs;
+    }
+
+    if(response.followers) {
+      this.followers().set(response.followers, { parse: true });
+      delete response.followers;
+    }
+
+    if(response.following) {
+      this.following().set(response.following, { parse: true });
+      delete response.following;
+    }
+
+    return response;
   }
 });

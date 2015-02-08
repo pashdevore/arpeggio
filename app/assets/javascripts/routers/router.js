@@ -13,10 +13,9 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
   },
 
   stream: function(){
-    debugger
-    var stream = Arpeggio.Models.Stream();
+    var stream = new Arpeggio.Models.Stream();
 
-    var view = new Arpeggio.Views.StreamIndex({
+    var view = new Arpeggio.Views.StreamShow({
       model: stream
     });
 

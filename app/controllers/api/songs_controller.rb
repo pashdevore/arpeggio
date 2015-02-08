@@ -7,11 +7,12 @@ module Api
 
     def show
       @song = Song.find(params[:id])
-      render :show
+      render json: @song
     end
 
     def new
       @song = Song.new
+      render json: @song
     end
 
     def create
@@ -21,7 +22,7 @@ module Api
         render json: @song
       else
         @song = Song.new
-        render :new
+        render json: @song
       end
     end
 

@@ -1,8 +1,8 @@
 module Api
-  class StreamController < ApiController
+  class StreamsController < ApiController
     def index
       @user = current_user;
-      render :index
+      render :show
     end
   end
 end

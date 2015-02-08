@@ -20,7 +20,7 @@ json.followers @user.followers do |follower|
                           :website_url, :facebook_url, :twitter_url, :youtube_url, :instagram_url
 end
 
-json.following @user.followings do |following|
+json.following @user.following do |following|
   json.extract! following, :id,
                            :username,
                            :avatar_url,

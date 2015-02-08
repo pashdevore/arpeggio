@@ -9,7 +9,7 @@ Arpeggio.Collections.Followers = Backbone.Collection.extend({
     if(!follower){
       follower = new Arpeggio.Models.Follower({ id: id });
 
-      follwer.fetch({
+      follower.fetch({
         success: function(){
           followers.add(follower);
         }
