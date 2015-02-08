@@ -24,13 +24,17 @@ ActiveRecord::Schema.define(version: 20150206162340) do
   end
 
   create_table "songs", force: :cascade do |t|
-    t.integer  "user_id",       null: false
-    t.string   "title",         null: false
-    t.string   "description",   null: false
-    t.string   "image_url",     null: false
-    t.string   "thumbnail_url", null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "user_id",            null: false
+    t.string   "title",              null: false
+    t.string   "description",        null: false
+    t.string   "image_url",          null: false
+    t.string   "thumbnail_url",      null: false
+    t.string   "audio_file_name"
+    t.string   "audio_content_type"
+    t.integer  "audio_file_size"
+    t.datetime "audio_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "taggings", force: :cascade do |t|

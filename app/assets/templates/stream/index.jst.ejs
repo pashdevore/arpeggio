@@ -1,9 +1,28 @@
 <div class="songs-list-wrapper">
   <div class="page-header">
     <h1>Songs <small>some of em'</small></h1>
-    <% debugger %>
-    <% stream.each( function (song) { %>
-      <h1><%= song.escape('title') %><small><%= song.escape('description') %></h1>
-    <% }) %>
   </div>
+
+  <ul class="songs-list list-group">
+    <% stream.each(function(song) { %>
+        <li class="list-group-item">
+          <img src="<%= song.escape('image_url') %>" alt="<%= song.escape('title') %> artwork" class="img-rounded">
+          <a href="#/songs/<%=song.id%>">
+            <%= song.escape("title") %>
+          </a>
+
+          <audio controls>
+            <source src="" type="audio/mp4">
+              Your browser does not support the audio element.
+          </audio>
+
+            <!-- Represents number of likes -->
+            <span class="badge">120</span>
+        </li>
+        <li class="list-group-item">
+          <%= song.escape("description") %>
+        </li>
+        <br><br>
+    <% }) %>
+  </ul>
 </div>

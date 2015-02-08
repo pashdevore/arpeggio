@@ -21,7 +21,6 @@ Arpeggio.Views.StreamIndex = Backbone.View.extend({
   },
 
   renderTracks: function () {
-    debugger
     this.collection.each(this.renderTrack.bind(this));
   }
 });
