@@ -16,7 +16,6 @@ Arpeggio is a clone of SoundCloud built on Rails and Backbone. Users can:
 - [x] View a stream of subscribed artists
 - [ ] Search for artists
 - [ ] Search for songs by title
-- [ ] Search for songs by tag
 
 ## Design Docs
 * [View Wireframes][views]
