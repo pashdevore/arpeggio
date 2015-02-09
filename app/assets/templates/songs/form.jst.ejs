@@ -18,7 +18,9 @@
 <div class="form-group">
   <a href="#" id="upload_widget_opener">Upload Image</a>
 </div>
-
+<div class="form-group hidden-div" style="display: none">
+  <img class="hidden-img" src="" style="display: none">
+</div>
 <div class="form-group">
   <label for="song-upload">Choose File</label>
   <input type="file" id="song-upload" name="track">
@@ -30,20 +32,23 @@
 <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-document.getElementById("upload_widget_opener").addEventListener("click", function() {
+  document.getElementById("upload_widget_opener").addEventListener("click", function() {
 
-  cloudinary.openUploadWidget({ cloud_name: 'arpeggio', upload_preset: 'wnoych6m'},
-  function(error, result) {
-    if (error) {
-      console.log("Something went wrong...");
-    } else {
-      //Success!!!
-      console.log(result);
-      $(".img_url").attr('value', result[0].url);
-      $(".thumb_url").attr('value', result[0].thumbnail_url);
-      $(".img_height").attr('value', result[0].height);
-      $(".img_width").attr('value', result[0].width);
-    }
-  });
-}, false);
+    cloudinary.openUploadWidget({ cloud_name: 'arpeggio', upload_preset: 'wnoych6m'},
+    function(error, result) {
+      if (error) {
+        console.log("Something went wrong...");
+      } else {
+        //Success!!!
+        console.log(result);
+        $(".img_url").attr('value', result[0].url);
+        $(".thumb_url").attr('value', result[0].thumbnail_url);
+        $(".img_height").attr('value', result[0].height);
+        $(".img_width").attr('value', result[0].width);
+        $(".hidden-img").attr('src', result[0].url);
+        $(".hidden-img").css('display', 'block');
+        $(".hidden-div").css('display', 'block')
+      }
+    });
+  }, false);
 </script>
