@@ -7,7 +7,7 @@ json.extract! @user, :id,
                      :website_url, :facebook_url, :twitter_url, :youtube_url, :instagram_url
 
 json.songs @user.songs do |song|
-  json.extract! song, :title, :description, :created_at, :updated_at
+  json.extract! song, :title, :description, :image_url, :thumbnail_url, :created_at, :updated_at
 end
 
 json.followers @user.followers do |follower|

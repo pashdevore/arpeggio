@@ -21,6 +21,7 @@
 //= require backbone
 //= require arpeggio
 //= require bootstrap-sprockets
+//= require_tree ./utils
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

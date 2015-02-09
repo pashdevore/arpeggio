@@ -31,5 +31,29 @@ Arpeggio.Models.User = Backbone.Model.extend({
     }
 
     return this._likes;
+  },
+
+  parse: function(response){
+    if(response.songs) {
+      this.songs().set(response.songs, { parse: true });
+      delete response.songs;
+    }
+
+    if(response.followings) {
+      this.followings().set(response.followings, { parse: true });
+      delete response.followings;
+    }
+
+    if(response.followers) {
+      this.followers().set(response.followers, { parse: true });
+      delete response.followers;
+    }
+
+    if(response.likes) {
+      this.likes().set(response.likes, { parse: true });
+      delete response.likes;
+    }
+
+    return response;
   }
 });

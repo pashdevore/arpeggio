@@ -1,78 +1,83 @@
-<div class="page-header">
-  <h1><%= user.escape('first_name') %> <small><%= user.escape('last_name') %></small></h1>
+<div class="profile-info">  
+  <div class="page-header">
+    <h1><%= user.escape('first_name') %> <small><%= user.escape('last_name') %></small></h1>
+  </div>
+
+  <% if(user.escape('gravatar_url')) { %>
+    <img src="<%= user.escape('gravatar_url') %>" class="img-responsive" alt="profile picture">
+  <% } else { %>
+    <img src="/assets/missing_gravatar.jpg" class="profile-img img-responsive" alt="profile picture">
+  <% } %>
+
+  <ul class="profile-list list-group">
+
+    <li class="list-group-item list-group-item-info">
+      City:
+    </li>
+    <li class="list-group-item">
+      <% var city = user.escape('city') %>
+      <% if (city) { %>
+        <%= city %>
+      <% } else { %>
+        –
+      <% } %>
+    </li>
+
+    <li class="list-group-item list-group-item-info">
+      State:
+    </li>
+    <li class="list-group-item">
+      <% var state = user.escape('state') %>
+      <% if (state) { %>
+        <%= state %>
+      <% } else { %>
+        –
+      <% } %>
+    </li>
+
+    <li class="list-group-item list-group-item-info">
+      Country:
+    </li>
+    <li class="list-group-item">
+      <% var country = user.escape('country') %>
+      <% if (country) { %>
+        <%= country %>
+      <% } else { %>
+        –
+      <% } %>
+    </li>
+
+    <li class="list-group-item list-group-item-info">
+      Biography:
+    </li>
+    <li class="list-group-item">
+      <% var bio = user.escape('biography') %>
+      <% if (bio) { %>
+        <%= bio %>
+      <% } else { %>
+        –
+      <% } %>
+    </li>
+
+    <li class="list-group-item list-group-item-info">
+      Website:
+    </li>
+    <li class="list-group-item">
+      <% var website = user.escape('website_url') %>
+      <% if (website) { %>
+        <%= website %>
+      <% } else { %>
+        –
+      <% } %>
+    </li>
+  </ul>
+
+  <% if(user.escape('id') !== $('.wrapper').attr('data-user-id')){ %>
+    <button type="button" class="btn btn-default subscribe" data-user-id="<%=user.escape('id') %>">Subscribe</button>
+  <% } else { %>
+    <a class="edit" href="#/users/<%=user.escape('id')%>/edit">Edit</a>
+  <% } %>
 </div>
 
-<% if(user.escape('gravatar_url')) { %>
-  <img src="<%= user.escape('gravatar_url') %>" class="img-responsive" alt="profile picture">
-<% } else { %>
-  <img src="/assets/missing_gravatar.jpg" class="profile-img img-responsive" alt="profile picture">
-<% } %>
-
-<ul class="profile-list list-group">
-
-  <li class="list-group-item list-group-item-info">
-    City:
-  </li>
-  <li class="list-group-item">
-    <% var city = user.escape('city') %>
-    <% if (city) { %>
-      <%= city %>
-    <% } else { %>
-      –
-    <% } %>
-  </li>
-
-  <li class="list-group-item list-group-item-info">
-    State:
-  </li>
-  <li class="list-group-item">
-    <% var state = user.escape('state') %>
-    <% if (state) { %>
-      <%= state %>
-    <% } else { %>
-      –
-    <% } %>
-  </li>
-
-  <li class="list-group-item list-group-item-info">
-    Country:
-  </li>
-  <li class="list-group-item">
-    <% var country = user.escape('country') %>
-    <% if (country) { %>
-      <%= country %>
-    <% } else { %>
-      –
-    <% } %>
-  </li>
-
-  <li class="list-group-item list-group-item-info">
-    Biography:
-  </li>
-  <li class="list-group-item">
-    <% var bio = user.escape('biography') %>
-    <% if (bio) { %>
-      <%= bio %>
-    <% } else { %>
-      –
-    <% } %>
-  </li>
-
-  <li class="list-group-item list-group-item-info">
-    Website:
-  </li>
-  <li class="list-group-item">
-    <% var website = user.escape('website_url') %>
-    <% if (website) { %>
-      <%= website %>
-    <% } else { %>
-      –
-    <% } %>
-  </li>
-</ul>
-
-<% if(user.escape('id') !== $('.wrapper').attr('data-user-id')){ %>
-  <button type="button" class="btn btn-default subscribe" data-user-id="<%=user.escape('id') %>">Subscribe</button>
-<% } else { %>
-  <a class="edit" href="#/users/<%=user.escape('id')%>/edit">Edit</a>
-<% } %>
+<div class="songs">
+</div>

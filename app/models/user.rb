@@ -63,4 +63,8 @@ class User < ActiveRecord::Base
     return nil if user.nil?
     user.is_password?(password) ? user : nil
   end
+
+  def follow(user_id)
+    following << User.find(user_id)
+  end
 end

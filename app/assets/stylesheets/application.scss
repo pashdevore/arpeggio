@@ -27,8 +27,8 @@
  }
 
  div.wrapper{
-   max-width: 960px;
    margin: 0 auto;
+   margin-bottom: 90px;
  }
 
  div.foreground-content{
@@ -73,9 +73,36 @@ ul.profile-list.list-group{
 }
 
 .edit{
-  padding-bottom: 80px;
+  margin-bottom: 80px;
 }
 
 .subscribe{
-  padding-bottom: 80px;
+  margin-bottom: 80px;
+}
+
+div.page-header{
+  margin-top: 81px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+
+div.page-header h1{
+  text-align: center;
+}
+
+
+div.profile-info{
+  width: 30%;
+  display: block;
+  float: left;
+  margin: 0 20px;
+  margin-bottom: 90px;
+}
+
+div.songs{
+  width: 60%;
+  display: block;
+  float: left;
 }
