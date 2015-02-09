@@ -5,9 +5,23 @@
 
   <ul class="users-list list-group">
   <% users.each(function(user) { %>
-
+    <div class="avatar">
+      <% var avatar = user.escape('avatar_url') %>
+      <% if(avatar){ %>
+        <img src="<%= avatar %>" class="img-responsive" alt="profile picture">
+      <% } else { %>
+        <img src="/assets/missing_gravatar.jpg" class="profile-img img-responsive" alt="profile picture">
+      <% } %>
+    </div>
     <li class="list-group-item">
-      <h3><%=user.escape('first_name') %> <%=user.escape('last_name') %></h3>
+      <h3>
+        <a href="#/users/<%=user.escape('id')%>">
+          <%=user.escape('first_name') %> <%=user.escape('last_name') %>
+        </a>
+      </h3>
+      <h4>
+        <%= user.escape('biography') %>
+      </h4>
     </li>
   <% }) %>
   </ul>
