@@ -9,7 +9,7 @@ Arpeggio is a clone of SoundCloud built on Rails and Backbone. Users can:
 
 - [x] Create accounts
 - [x] Create sessions (log in)
-- [ ] Upload songs
+- [x] Upload songs
 - [ ] Tag songs
 - [x] View artists and songs
 - [ ] Subscribe to artists

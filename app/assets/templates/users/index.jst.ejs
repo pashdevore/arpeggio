@@ -22,6 +22,15 @@
       <h4>
         <%= user.escape('biography') %>
       </h4>
+      <h4>
+        <%= user.escape('city') %>, <%= user.escape('state') %>
+      </h4>
+      <h4>
+        <%= user.escape('country') %>
+      </h4>
+      <h4>
+        <a href="<%= user.escape('website_url') %>"><%= user.escape('website_url') %></a>
+      </h4>
     </li>
   <% }) %>
   </ul>
