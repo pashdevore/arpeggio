@@ -29,17 +29,25 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
     var view = new Arpeggio.Views.SongShow({
       model: song
     });
-    this.addSubview('.songs', view);
+
+    // check to make sure song is one user has created
+    debugger
+    if(song.escape('user_id') == this.model.escape('id')){
+      this.addSubview('.songs', view);
+    }
   },
 
   subscribe: function(event) {
+    event.preventDefault();
     var $target = $(event.currentTarget);
 
     //get user-id data attribute from html button
     debugger
     //front end handles adding to other user's followers collection
+    var user_to_follow = Arpeggio.Collections.users.getOrFetch($target.data('user-id'));
+    user_to_follow._followers.add(this.model);
+
     //back end will have a followings controller that has a post and destroy
     //for creating and deleting a follower
-    var user_id = $target.data('user-id');
   }
 });
