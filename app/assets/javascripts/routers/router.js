@@ -51,12 +51,15 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
 
   user_show: function(id){
     var user = Arpeggio.Collections.users.getOrFetch(id);
+    user.songs().fetch({
+      success: function(){
+        var view = new Arpeggio.Views.UserShow({
+          model: user
+        });
 
-    var view = new Arpeggio.Views.UserShow({
-      model: user
+        this._swapView(view);
+      }.bind(this)
     });
-
-    this._swapView(view);
   },
 
   user_edit: function(id){
