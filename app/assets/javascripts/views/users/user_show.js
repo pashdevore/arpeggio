@@ -31,7 +31,6 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
     });
 
     // check to make sure song is one user has created
-    debugger
     if(song.escape('user_id') == this.model.escape('id')){
       this.addSubview('.songs', view);
     }

@@ -1,0 +1,14 @@
+<div class="users-list-wrapper">
+  <div class="page-header">
+    <h1>Users <small>all of em'</small></h1>
+  </div>
+
+  <ul class="users-list list-group">
+  <% users.each(function(user) { %>
+
+    <li class="list-group-item">
+      <h3><%=user.escape('first_name') %> <%=user.escape('last_name') %></h3>
+    </li>
+  <% }) %>
+  </ul>
+</div>

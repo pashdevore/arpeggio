@@ -10,7 +10,8 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
     "songs/:id": "song_show",
     "songs/:id/edit": "song_edit",
     "users/:id/edit": "user_edit",
-    "songs": "songs_index"
+    "songs": "songs_index",
+    "users": "explore"
   },
 
   stream: function(){
@@ -78,6 +79,18 @@ Arpeggio.Routers.Router = Backbone.Router.extend({
       success: function(){
         var view = new Arpeggio.Views.SongsIndex({
           collection: Arpeggio.Collections.songs
+        });
+
+        this._swapView(view);
+      }.bind(this)
+    });
+  },
+
+  explore: function() {
+    Arpeggio.Collections.users.fetch({
+      success: function() {
+        var view = new Arpeggio.Views.UsersIndex({
+          collection: Arpeggio.Collections.users
         });
 
         this._swapView(view);
