@@ -4,7 +4,7 @@
 <div class="song-show">
   <img class="song-show-image" src="<%=song.escape('image_url')%>" alt="<%= song.escape('title') %> artwork">
   <audio controls class="song-show-player">
-    <source src="" type="audio/mp4">
+    <source src="<%= song.escape('audio_file_name') %>" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
 </div>

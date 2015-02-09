@@ -15,11 +15,11 @@
 #
 
 class Song < ActiveRecord::Base
-  validates :title, :description, :image_url, :thumbnail_url, :user_id, presence: true
+  validates :title, :description, :image_url, :thumbnail_url, :user_id, :audio_file_name, presence: true
 
   belongs_to :user
   has_many :taggings
   has_many :tags, through: :taggings, source: :tag
   has_many :song_likes
-  
+
 end

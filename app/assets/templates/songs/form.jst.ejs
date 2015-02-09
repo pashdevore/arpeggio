@@ -8,7 +8,7 @@
   <input type="hidden" class="thumb_url" name="thumbnail_url" value="">
   <input type="hidden" class="img_width" name="image_width" value="">
   <input type="hidden" class="img_height" name="image_height" value="">
-  <input type="hidden" class="song_url" name="song_file_name" value="">
+  <input type="hidden" class="song_url" name="audio_file_name" value="">
   <label for="title">Title</label>
   <input type="text" name="title" class="form-control" id="title" value="<%=song.escape('title')%>" placeholder="Song Title">
 </div>
@@ -23,10 +23,7 @@
   <img class="hidden-img" src="" style="display: none">
 </div>
 <div class="form-group">
-  <input type="filepicker"
-         data-fp-mimetype="audio/*"
-         name="song[audio_file_name]" data-fp-button-text="Choose Song"
-         data-fp-button-class="btn btn-default upload-song">
+  <a href="#" id="upload_song_file">Upload Song</a>
 </div>
 
 <button type="submit" class="btn btn-default" style="margin-bottom: 90px;">Submit</button>
