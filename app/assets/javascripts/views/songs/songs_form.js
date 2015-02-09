@@ -5,7 +5,8 @@ Arpeggio.Views.SongsForm = Backbone.View.extend({
 
   events: {
     "click button": "submit",
-    "click #upload_widget_opener": "upload"
+    "click #upload_widget_opener": "upload",
+    "click .upload-song": "uploadSongMedia"
   },
 
   initialize: function(){
@@ -26,8 +27,8 @@ Arpeggio.Views.SongsForm = Backbone.View.extend({
   },
 
   submit: function (event) {
-    debugger
     event.preventDefault();
+    this.uploadSongImage();
     var attrs = this.$el.serializeJSON();
 
     var that = this;
@@ -41,6 +42,36 @@ Arpeggio.Views.SongsForm = Backbone.View.extend({
       error: function(){
         console.log("error");
       }
+    });
+  },
+
+  uploadSongImage: function(){
+    $(".song-new").attr("enctype","multipart/form-data");
+
+    document.getElementById("upload_widget_opener").addEventListener("click", function() {
+
+      cloudinary.openUploadWidget({ cloud_name: 'arpeggio', upload_preset: 'wnoych6m'},
+      function(error, result) {
+        if (error) {
+          console.log("Something went wrong...");
+        } else {
+          //Success!!!
+          console.log(result);
+          $(".img_url").attr('value', result[0].url);
+          $(".thumb_url").attr('value', result[0].thumbnail_url);
+          $(".img_height").attr('value', result[0].height);
+          $(".img_width").attr('value', result[0].width);
+          $(".hidden-img").attr('src', result[0].url);
+          $(".hidden-img").css('display', 'block');
+          $(".hidden-div").css('display', 'block');
+        }
+      });
+    }, false);
+  },
+
+  uploadSongMedia: function() {
+    filepicker.pick(function(blob) {
+      $(".song_url").attr("value", blob.url);
     });
   }
 });

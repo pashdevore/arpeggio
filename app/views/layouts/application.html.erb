@@ -10,5 +10,10 @@
 
 <%= yield %>
 
+<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+<script src="//api.filepicker.io/v1/filepicker.js" type="text/javascript"></script>
+<script>
+  filepicker.setKey("<%= ENV['FILEPICKER_API_KEY'] %>");
+</script>
 </body>
 </html>
