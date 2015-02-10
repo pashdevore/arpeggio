@@ -1,9 +1,9 @@
 <div class="page-header">
-  <h1><%= song.escape('title') %> <small><%= song.escape('description') %></small></h1>
+  <h3><%= song.escape('title') %> <small><%= song.escape('description') %></small></h3>
 </div>
 <div class="song-show">
-  <img class="song-show-image" src="<%=song.escape('image_url')%>" alt="<%= song.escape('title') %> artwork">
-  <audio controls class="song-show-player">
+  <img style="width: 40%; height: 40%;" class="song-show-image" src="<%=song.escape('image_url')%>" alt="<%= song.escape('title') %> artwork">
+  <audio controls class="song-show-player" style="width: 300px;">
     <source src="<%= song.escape('audio_file_name') %>" type="audio/mpeg">
     <source src="<%= song.escape('audio_file_name') %>" type="audio/mp3">
     <source src="<%= song.escape('audio_file_name') %>" type="audio/mp4">

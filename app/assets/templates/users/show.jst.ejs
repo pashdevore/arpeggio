@@ -3,8 +3,8 @@
     <h1><%= user.escape('first_name') %> <small><%= user.escape('last_name') %></small></h1>
   </div>
 
-  <% if(user.escape('gravatar_url')) { %>
-    <img src="<%= user.escape('gravatar_url') %>" class="img-responsive" alt="profile picture">
+  <% if(user.escape('avatar_url')) { %>
+    <img src="<%= user.escape('avatar_url') %>" class="img-responsive" alt="profile picture">
   <% } else { %>
     <img src="/assets/missing_gravatar.jpg" class="profile-img img-responsive" alt="profile picture">
   <% } %>
@@ -101,11 +101,19 @@
   <% } %>
 </div>
 
-<div class="songs">
-</div>
+<div class="content">
+  <div class="songs">
+  </div>
 
-<div class="followers">
-</div>
+  <div class="people">
+    <h3 style="opacity: 0.6;">Followers</h3>
+    <div class="followers">
+    </div>
+    <hr>
 
-<div class="followings">
+    <h3 style="opacity: 0.6;">Following</h3>
+    <div class="followings">
+    </div>
+    <hr>
+  </people>
 </div>

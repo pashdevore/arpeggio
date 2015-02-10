@@ -1,4 +1,4 @@
-<div class="page-header">
-  <% debugger %>
-  <h1><%= following.escape('first_name') %> <small><%= following.escape('last_name') %></small></h1>
-</div>
+<% if(following.escape('avatar_url')){ %>
+  <img src="<%= following.escape('avatar_url') %>" alt="profile">
+<% } %>
+<a href="#/users/<%=following.escape('id')%>"><h3><%= following.escape('first_name') %> <small><%= following.escape('last_name') %></small></h3></a>

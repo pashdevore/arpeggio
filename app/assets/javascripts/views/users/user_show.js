@@ -17,8 +17,8 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
     });
 
     this.$el.html(renderedContent);
-    this.renderSongs();
-    // this.renderFollowers();
+    setTimeout(this.renderSongs(), 0);
+    //this.renderFollowers();
     this.renderFollowings();
     return this;
   },
@@ -36,7 +36,7 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   addSong: function (song) {
-    var view = new Arpeggio.Views.SongShow({
+    var view = new Arpeggio.Views.SongShowSmall({
       model: song
     });
 

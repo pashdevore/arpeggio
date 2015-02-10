@@ -40,7 +40,6 @@ Arpeggio.Models.User = Backbone.Model.extend({
     }
 
     if(response.following) {
-      debugger
       this.followings().set(response.following, { parse: true });
       delete response.following;
     }

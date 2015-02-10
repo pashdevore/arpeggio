@@ -101,8 +101,21 @@ div.profile-info{
   margin-bottom: 90px;
 }
 
-div.songs{
+div.content{
   width: 60%;
   display: block;
   float: left;
+}
+
+div.songs{
+  width: 70%;
+  display: block;
+  float: left;
+}
+
+div.people{
+  width: 30%;
+  display: block;
+  float: left;
+  text-align: center;
 }

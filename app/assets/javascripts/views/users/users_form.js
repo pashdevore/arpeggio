@@ -41,5 +41,17 @@ Arpeggio.Views.UsersForm = Backbone.View.extend({
 
   upload: function (event) {
     event.preventDefault();
+
+    cloudinary.openUploadWidget({ cloud_name: 'arpeggio', upload_preset: 'wnoych6m'},
+    function(error, result) {
+      if (error) {
+        console.log("Something went wrong...");
+      } else {
+        //Success!!!
+        console.log(result);
+        $(".gravatar_url").attr('value', result[0].url);
+        $(".img-responsive").attr("src", result[0].url);
+      }
+    });
   }
 });
