@@ -11,7 +11,6 @@
             <%= song.escape("title") %>
           </a>
 
-          <% debugger %>
           <audio controls>
             <source src="<%= song.escape('audio_file_name') %>" type="audio/mpeg">
             <source src="<%= song.escape('audio_file_name') %>" type="audio/mp3">
@@ -20,7 +19,7 @@
           </audio>
 
             <!-- Represents number of likes -->
-            <span class="badge">120</span>
+            <!-- <span class="badge">120</span> -->
         </li>
         <li class="list-group-item">
           <%= song.escape("description") %>

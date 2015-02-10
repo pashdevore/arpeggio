@@ -1,4 +1,7 @@
-json.array! @stream_songs, :id, :title, :description, :image_url, :thumbnail_url, :audio_file_name, :created_at, :updated_at
+json.array! @stream_songs, :id, :user_id, :title, :description, :image_url, :thumbnail_url, :audio_file_name, :created_at, :updated_at
+
+# json.array! @users, :id, :first_name, :last_name, :created_at, :updated_at
+
 
 # json.songs @user.songs do |song|
 #   json.extract! song, :title, :description, :created_at, :updated_at
