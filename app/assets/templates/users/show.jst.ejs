@@ -1,4 +1,4 @@
-<div class="profile-info" data-profile-user-id="<%= user.escape('id') %>">  
+<div class="profile-info" data-profile-user-id="<%= user.escape('id') %>">
   <div class="page-header">
     <h1><%= user.escape('first_name') %> <small><%= user.escape('last_name') %></small></h1>
   </div>
@@ -66,6 +66,54 @@
       <% var website = user.escape('website_url') %>
       <% if (website) { %>
         <%= website %>
+      <% } else { %>
+        –
+      <% } %>
+    </li>
+
+    <li class="list-group-item list-group-item-info">
+      Facebook:
+    </li>
+    <li class="list-group-item">
+      <% var facebook = user.escape('facebook_url') %>
+      <% if (facebook) { %>
+        <a href="<%= facebook %>"><img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/512/Facebook-icon.png"></a>
+      <% } else { %>
+        –
+      <% } %>
+    </li>
+
+    <li class="list-group-item list-group-item-info">
+      Twitter:
+    </li>
+    <li class="list-group-item">
+      <% var twitter = user.escape('twitter_url') %>
+      <% if (twitter) { %>
+        <a href="<%= twitter %>"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_color-512.png"></a>
+      <% } else { %>
+        –
+      <% } %>
+    </li>
+
+    <li class="list-group-item list-group-item-info">
+      Youtube:
+    </li>
+    <li class="list-group-item">
+      <% var youtube = user.escape('youtube_url') %>
+      <% if (youtube) { %>
+        <a href="<%= youtube %>"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Youtube_icon.svg/2000px-Youtube_icon.svg.png"></a>
+      <% } else { %>
+        –
+      <% } %>
+    </li>
+
+    <li class="list-group-item list-group-item-info">
+      Instagram:
+    </li>
+    <li class="list-group-item">
+      <% var instagram = user.escape('instagram_url') %>
+      <% if (instagram) { %>
+        <a href="<%= instagram %>"><img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/512/Instagram-icon.png"></a>
       <% } else { %>
         –
       <% } %>
