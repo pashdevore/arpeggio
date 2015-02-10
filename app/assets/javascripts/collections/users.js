@@ -1,5 +1,5 @@
 Arpeggio.Collections.Users = Backbone.Collection.extend({
-  url: "users",
+  url: "api/users",
   model: Arpeggio.Models.User,
 
   getOrFetch: function(id){

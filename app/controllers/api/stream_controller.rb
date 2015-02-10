@@ -1,8 +1,8 @@
 module Api
   class StreamController < ApiController
     def index
-      # @users = User.all;
       @stream_songs = current_user.stream_songs;
+      render :index
     end
   end
 end

@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    puts "in user controller"
     @user = User.find(params[:id])
     @songs = @user.songs
     @followers = @user.followers

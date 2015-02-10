@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   root 'static_pages#root'
 
-  resources :users
-  resource :session
-
   namespace :api, defaults: { format: :json } do
     resources :stream
 
@@ -11,4 +8,7 @@ Rails.application.routes.draw do
 
     resources :songs
   end
+
+  resources :users
+  resource :session
 end

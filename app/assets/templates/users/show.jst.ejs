@@ -12,7 +12,7 @@
   <ul class="profile-list list-group">
 
     <li class="list-group-item list-group-item-info">
-      City:
+      <h4>City</h4>
     </li>
     <li class="list-group-item">
       <% var city = user.escape('city') %>
@@ -24,7 +24,7 @@
     </li>
 
     <li class="list-group-item list-group-item-info">
-      State:
+      <h4>State</h4>
     </li>
     <li class="list-group-item">
       <% var state = user.escape('state') %>
@@ -36,7 +36,7 @@
     </li>
 
     <li class="list-group-item list-group-item-info">
-      Country:
+      <h4>Country</h4>
     </li>
     <li class="list-group-item">
       <% var country = user.escape('country') %>
@@ -48,7 +48,7 @@
     </li>
 
     <li class="list-group-item list-group-item-info">
-      Biography:
+      <h4>Biography</h4>
     </li>
     <li class="list-group-item">
       <% var bio = user.escape('biography') %>
@@ -60,49 +60,38 @@
     </li>
 
     <li class="list-group-item list-group-item-info">
-      Website:
+      <h4>Website</h4>
     </li>
     <li class="list-group-item">
       <% var website = user.escape('website_url') %>
       <% if (website) { %>
-        <%= website %>
+        <a href=<%= website %>><%= website %></a>
       <% } else { %>
         –
       <% } %>
     </li>
 
-
-    <% var facebook = user.escape('facebook_url') %>
-    <% if (facebook) { %>
-      <li class="list-group-item">
+    <li class="list-group-item">
+      <% var facebook = user.escape('facebook_url') %>
+      <% if (facebook) { %>
         <a href="<%= facebook %>"><img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/512/Facebook-icon.png"></a>
-      </li>
-    <% } %>
+      <% } %>
 
-
-    <% var twitter = user.escape('twitter_url') %>
-    <% if (twitter) { %>
-      <li class="list-group-item">
+      <% var twitter = user.escape('twitter_url') %>
+      <% if (twitter) { %>
         <a href="<%= twitter %>"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_color-512.png"></a>
-      </li>
-    <% } %>
+      <% } %>
 
-
-    <% var youtube = user.escape('youtube_url') %>
-    <% if (youtube) { %>
-      <li class="list-group-item">
+      <% var youtube = user.escape('youtube_url') %>
+      <% if (youtube) { %>
         <a href="<%= youtube %>"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Youtube_icon.svg/2000px-Youtube_icon.svg.png"></a>
-      </li>
-    <% } %>
+      <% } %>
 
-
-    <% var instagram = user.escape('instagram_url') %>
-    <% if (instagram) { %>
-      <li class="list-group-item">
+      <% var instagram = user.escape('instagram_url') %>
+      <% if (instagram) { %>
         <a href="<%= instagram %>"><img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/512/Instagram-icon.png"></a>
-      </li>
-    <% } %>
-
+      <% } %>
+    </li>
   </ul>
 
   <% if(user.escape('id') !== $('.wrapper').attr('data-user-id')){ %>
@@ -113,4 +102,10 @@
 </div>
 
 <div class="songs">
+</div>
+
+<div class="followers">
+</div>
+
+<div class="followings">
 </div>

@@ -18,11 +18,21 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
 
     this.$el.html(renderedContent);
     this.renderSongs();
+    // this.renderFollowers();
+    this.renderFollowings();
     return this;
   },
 
-  renderSongs: function(){
+  renderSongs: function () {
     this.model.songs().each(this.addSong.bind(this));
+  },
+
+  renderFollowers: function () {
+    this.model.followers().each(this.addFollower.bind(this));
+  },
+
+  renderFollowings: function () {
+    this.model.followings().each(this.addFollowing.bind(this));
   },
 
   addSong: function (song) {
@@ -36,12 +46,27 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
     }
   },
 
+  addFollower: function (follower) {
+    var view = new Arpeggio.Views.FollowerShow({
+      model: follower
+    });
+
+    this.addSubview('.followers', view);
+  },
+
+  addFollowing: function (following) {
+    var view = new Arpeggio.Views.FollowingShow({
+      model: following
+    });
+
+    this.addSubview('.followings', view);
+  },
+
   subscribe: function(event) {
+    debugger
     event.preventDefault();
     var $target = $(event.currentTarget);
 
-    //get user-id data attribute from html button
-    debugger
     //front end handles adding to other user's followers collection
     var user_to_follow = Arpeggio.Collections.users.getOrFetch($target.data('user-id'));
     user_to_follow._followers.add(this.model);
