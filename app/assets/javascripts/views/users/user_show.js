@@ -83,7 +83,7 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
     var current_user = Arpeggio.Collections.users.getOrFetch($(".wrapper").data("user-id"));
     //save, get, and fetch in backbone call the appropriate html methods!
 
-    this.model.follow().save({follower_id: current_user.id}, {
+    this.model.follow().save({follower_id: this.model.id}, {
       success: function() {
         //this.model is John Mayer when subscribing to John Mayer
         //this.model we are adding is the subscriber (i.e. George Washington)
