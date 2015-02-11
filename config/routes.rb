@@ -5,10 +5,17 @@ Rails.application.routes.draw do
     resources :stream
 
     resources :users
+    # resources :users do
+    #   member do
+    #     post 'follow'
+    #   end
+    # end
 
     resources :songs
 
     resources :followings
+
+    resources :follow  
   end
 
   resources :users

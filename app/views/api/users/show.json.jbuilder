@@ -8,7 +8,7 @@ json.extract! @user, :id,
 
 if @user.followed_by?(current_user)
  json.follow do
-   json.id current_user.followers.find_by(follower_id: @user.id).id
+   json.id current_user.followers.find_by(following_id: @user.id).id
  end
 end
 

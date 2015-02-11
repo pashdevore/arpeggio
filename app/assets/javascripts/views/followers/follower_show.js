@@ -1,4 +1,4 @@
-Arpeggio.Views.FollowersShow = Backbone.View.extend({
+Arpeggio.Views.FollowerShow = Backbone.View.extend({
   template: JST['followers/show'],
 
   initialize: function () {
@@ -7,7 +7,7 @@ Arpeggio.Views.FollowersShow = Backbone.View.extend({
 
   render: function () {
     var renderedContent = this.template({
-      following: this.model
+      follower: this.model
     });
 
     this.$el.html(renderedContent);

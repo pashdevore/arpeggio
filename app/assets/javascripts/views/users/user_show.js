@@ -18,7 +18,7 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
 
     this.$el.html(renderedContent);
     this.renderSongs();
-    // this.renderFollowers();
+    this.renderFollowers();
     this.renderFollowings();
 
     return this;
@@ -79,13 +79,17 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
     //
     //   }.bind(this)
     // });
-
+    debugger
     var current_user = Arpeggio.Collections.users.getOrFetch($(".wrapper").data("user-id"));
     //save, get, and fetch in backbone call the appropriate html methods!
-    
-    this.model.follow().save({follower_id: current_user.id}, function () {
-      this.model.followings().add(this.model.follow());
-    }.bind(this));
+
+    this.model.follow().save({follower_id: current_user.id}, {
+      success: function() {
+        //this.model is John Mayer when subscribing to John Mayer
+        //this.model we are adding is the subscriber (i.e. George Washington)
+        this.model.followings().add(this.model.follow());
+      }.bind(this)
+    });
     //back end will have a followings controller that has a post and destroy
     //for creating and deleting a follower
   }
