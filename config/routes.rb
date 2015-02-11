@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 
     resources :followings
 
-    resources :follow  
+    resources :follow
+
+    resources :followers 
   end
 
   resources :users

@@ -95,7 +95,6 @@
   </ul>
 
   <% if(user.escape('id') !== $('.wrapper').attr('data-user-id')){ %>
-    <% debugger %>
     <% if(user.follow().isNew()) { %>
       <button type="button" class="btn btn-default subscribe" data-user-id="<%=user.escape('id') %>">Subscribe</button>
     <% } else { %>

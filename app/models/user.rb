@@ -67,7 +67,6 @@ class User < ActiveRecord::Base
   end
 
   def followed_by?(user)
-    debugger
     self.followers.include?(user)
   end
 end

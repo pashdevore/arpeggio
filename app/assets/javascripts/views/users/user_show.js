@@ -7,7 +7,7 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.collection = this.model.songs();
-    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'sync remove', this.render);
     this.listenTo(this.collection, 'add', this.addSong);
   },
 
@@ -66,30 +66,25 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
   subscribe: function(event) {
 
     event.preventDefault();
-    // var $target = $(event.currentTarget);
-    //
-    // //front end handles adding to other user's followers collection
-    // var follow_id = this.model.escape('id');
-    // var user_to_follow = Arpeggio.Collections.users.getOrFetch(follow_id);
-    // var current_id = $(".wrapper").data('user-id');
-    // var current_user = Arpeggio.Collections.users.getOrFetch(current_id);
-    // debugger
-    // current_user.followings().fetch({
-    //   success: function () {
-    //
-    //   }.bind(this)
-    // });
+
     var current_user = Arpeggio.Collections.users.getOrFetch($(".wrapper").data("user-id"));
     //save, get, and fetch in backbone call the appropriate html methods!
 
-    this.model.follow().save({follower_id: this.model.id}, {
-      success: function() {
-        //this.model is John Mayer when subscribing to John Mayer
-        //this.model we are adding is the subscriber (i.e. George Washington)
-        this.model.followings().add(this.model.follow());
-      }.bind(this)
-    });
-    //back end will have a followings controller that has a post and destroy
-    //for creating and deleting a follower
+    if($(".subscribe").text() === "Subscribe") {
+      this.model.follow().save({follower_id: this.model.id}, {
+        success: function() {
+          //this.model is John Mayer when subscribing to John Mayer
+          //this.model we are adding is the subscriber (i.e. George Washington)
+          this.model.followings().add(this.model.follow());
+        }.bind(this)
+      });
+      //back end will have a followings controller that has a post and destroy
+      //for creating and deleting a follower
+    } else {
+      debugger
+      this.model.follow().destroy({follower_id: this.model.id});
+      var model = this.model.followers().get(current_user.id);
+      model.destroy();
+    }
   }
 });
