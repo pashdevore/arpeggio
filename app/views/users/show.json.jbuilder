@@ -6,6 +6,12 @@ json.extract! @user, :id,
                      :biography,
                      :website_url, :facebook_url, :twitter_url, :youtube_url, :instagram_url
 
+if @user.followed_by?(current_user)
+ json.follow do
+   json.id current_user.following.find_by(id: @user.id).id
+ end
+end
+
 json.songs @user.songs do |song|
   json.extract! song, :title, :description, :image_url, :thumbnail_url, :created_at, :updated_at
 end

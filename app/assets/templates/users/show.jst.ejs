@@ -95,7 +95,14 @@
   </ul>
 
   <% if(user.escape('id') !== $('.wrapper').attr('data-user-id')){ %>
-    <button type="button" class="btn btn-default subscribe" data-user-id="<%=user.escape('id') %>">Subscribe</button>
+    <% debugger %>
+    <% if(user.follow().isNew()) { %>
+      <button type="button" class="btn btn-default subscribe" data-user-id="<%=user.escape('id') %>">Subscribe</button>
+    <% } else { %>
+      <button type="button" class="btn btn-default subscribe" data-user-id="<%=user.escape('id') %>">Unsubscribe</button>
+    <% } %>
+
+
   <% } else { %>
     <a class="edit" href="#/users/<%=user.escape('id')%>/edit">Edit</a>
   <% } %>

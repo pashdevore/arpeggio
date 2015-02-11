@@ -11,6 +11,8 @@
 #  updated_at      :datetime         not null
 #
 
+require 'byebug'
+
 class User < ActiveRecord::Base
   attr_reader :password
 
@@ -65,6 +67,7 @@ class User < ActiveRecord::Base
   end
 
   def followed_by?(user)
+    debugger
     self.followers.include?(user)
   end
 end

@@ -79,7 +79,6 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
     //
     //   }.bind(this)
     // });
-    debugger
     var current_user = Arpeggio.Collections.users.getOrFetch($(".wrapper").data("user-id"));
     //save, get, and fetch in backbone call the appropriate html methods!
 
