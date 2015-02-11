@@ -33,7 +33,23 @@ Arpeggio.Models.User = Backbone.Model.extend({
     return this._likes;
   },
 
+  follow: function(){
+    if(!this._follow){
+      this._follow = new Arpeggio.Models.Follow();
+    }
+
+    return this._follow;
+  },
+
   parse: function(response){
+    //set the follow to the user's page your visiting
+    this.follow().set({ follower_id: response.id });
+
+    if(response.follow){
+      this.follow().set(response.follow);
+      delete response.follow;
+    }
+
     if(response.songs) {
       this.songs().set(response.songs, { parse: true });
       delete response.songs;

@@ -11,7 +11,7 @@
         <li class="list-group-item">
           <img src="<%= song.escape('image_url') %>" alt="<%= song.escape('title') %> artwork" class="img-rounded">
           <a href="#/songs/<%=song.id%>">
-            <%= song.escape("title") %>
+            <h4 style="display:inline;"><%= song.escape("title") %></h4>
           </a>
 
           <audio controls>

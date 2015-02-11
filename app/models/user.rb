@@ -64,7 +64,7 @@ class User < ActiveRecord::Base
     user.is_password?(password) ? user : nil
   end
 
-  def follow(user_id)
-    following << User.find(user_id)
+  def followed_by?(user)
+    self.followers.include?(user)
   end
 end

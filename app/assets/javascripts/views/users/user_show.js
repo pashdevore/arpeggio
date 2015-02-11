@@ -17,9 +17,10 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
     });
 
     this.$el.html(renderedContent);
-    setTimeout(this.renderSongs(), 0);
-    //this.renderFollowers();
+    this.renderSongs();
+    // this.renderFollowers();
     this.renderFollowings();
+
     return this;
   },
 
@@ -63,14 +64,26 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   subscribe: function(event) {
-    debugger
+
     event.preventDefault();
-    var $target = $(event.currentTarget);
-
-    //front end handles adding to other user's followers collection
-    var user_to_follow = Arpeggio.Collections.users.getOrFetch($target.data('user-id'));
-    user_to_follow._followers.add(this.model);
-
+    // var $target = $(event.currentTarget);
+    //
+    // //front end handles adding to other user's followers collection
+    // var follow_id = this.model.escape('id');
+    // var user_to_follow = Arpeggio.Collections.users.getOrFetch(follow_id);
+    // var current_id = $(".wrapper").data('user-id');
+    // var current_user = Arpeggio.Collections.users.getOrFetch(current_id);
+    // debugger
+    // current_user.followings().fetch({
+    //   success: function () {
+    //
+    //   }.bind(this)
+    // });
+    
+    var current_user = Arpeggio.Collections.users.getOrFetch($(".wrapper").data("user-id"));
+    this.model.follow().save({follower_id: current_user.id}, function () {
+      this.model.followings().add(this.model.follow());
+    }.bind(this));
     //back end will have a followings controller that has a post and destroy
     //for creating and deleting a follower
   }

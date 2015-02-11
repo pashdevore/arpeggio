@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :users
 
     resources :songs
+
+    resources :followings
   end
 
   resources :users
