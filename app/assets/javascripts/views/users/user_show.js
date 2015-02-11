@@ -79,8 +79,10 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
     //
     //   }.bind(this)
     // });
-    
+
     var current_user = Arpeggio.Collections.users.getOrFetch($(".wrapper").data("user-id"));
+    //save, get, and fetch in backbone call the appropriate html methods!
+    
     this.model.follow().save({follower_id: current_user.id}, function () {
       this.model.followings().add(this.model.follow());
     }.bind(this));
