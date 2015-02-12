@@ -2,6 +2,8 @@
   <div class="logo-signin">
   </div>
   <div class="page-header">
+    <h3 style="color: #3498DB;">A SoundCloud clone for expanding your musical tastes</h3>
+    <br>
     <h1>Sign In <small>listen to the world</small></h1>
   </div>
 
@@ -9,15 +11,28 @@
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <div class="form-group">
       <label for="username">Username</label>
-      <input type="text" name="user[username]" class="form-control" id="username" placeholder="Enter Username">
+      <input type="text" name="user[username]" class="form-control username" id="username" placeholder="Enter Username">
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" name="user[password]" class="form-control" id="password" placeholder="Enter Password">
+      <input type="password" name="user[password]" class="form-control password" id="password" placeholder="Enter Password">
     </div>
 
-    <button type="submit" class="btn btn-default">Sign In</button>
+    <button type="submit" class="submit btn btn-default">Sign In</button>
     <br><br>
     <a href="/users/new">New User?</a>
+    <br><br>
+    <a href="" class="guest">Guest?</a>
   </form>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".guest").click(function(event){
+    event.preventDefault();
+    $('.username').attr("value", "muse");
+    $('.password').attr("value", "password");
+    $('.submit').click();
+  })
+})
+</script>

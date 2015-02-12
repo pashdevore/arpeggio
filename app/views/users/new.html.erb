@@ -2,6 +2,7 @@
   <div class="logo-signup">
   </div>
   <div class="page-header">
+    <h3 style="color: #3498DB;">A SoundCloud clone for expanding your musical tastes</h3>
     <h1>Sign Up <small>begin your adventure</small></h1>
   </div>
 
@@ -9,11 +10,11 @@
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <div class="form-group">
       <label for="username">Username</label>
-      <input type="text" name="user[username]" class="form-control" id="username" placeholder="Enter Username">
+      <input type="text" name="user[username]" class="form-control username" id="username" placeholder="Enter Username">
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" name="user[password]" class="form-control" id="password" placeholder="Enter Password">
+      <input type="password" name="user[password]" class="form-control password" id="password" placeholder="Enter Password">
     </div>
 
   <button type="submit" class="btn btn-default">Sign Up!</button>
