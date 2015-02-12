@@ -19,7 +19,7 @@ div.logo-signup{
 }
 
 div.foreground-content{
-  background-image:url('/assets/arpeggio_sign_in.png');
+  background-image:asset-url('arpeggio_sign_in.png');
   background-position:center;
   height: 589px;
   width: 500px;
@@ -57,14 +57,8 @@ div.follower{
   padding-top: 20px;
 }
 
-div.avatar{
-  background-color: rgba(0,0,0,0.5);
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-div.avatar:hover{
-  background-color: rgba(0,0,0,0.1);
+div.following{
+  padding-top: 20px;
 }
 
 div.following img:hover{
