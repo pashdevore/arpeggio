@@ -26,13 +26,24 @@
    border: 0px;
  }
 
+ body {
+
+ }
+
+ h1, h2, h3, h4 {
+   opacity: 0.8;
+   color: #a80bef;
+ }
+
  div.wrapper{
-   margin: 0 auto;
+   margin: 0 20px;
    margin-bottom: 90px;
+  //  background-image: asset-url('HMsJMTw.png');
+  //  background-repeat: repeat;
  }
 
  div.foreground-content{
-   background-image:url('/assets/arpeggio_sign_in.png');
+   background-image:asset-url('arpeggio_sign_in.png');
    background-position:center;
    height: 589px;
    width: 500px;
@@ -55,6 +66,10 @@
 .songs-list-wrapper{
   margin-top: 51px;
   padding-top: 20px;
+}
+
+.list-group-item{
+  background-color:rgba(255,255,255,0.5);
 }
 
 img {
@@ -116,6 +131,6 @@ div.songs{
 div.people{
   width: 30%;
   display: block;
-  float: left;
+  float: right;
   text-align: center;
 }
