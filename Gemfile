@@ -12,13 +12,13 @@ gem 'pg'
 gem 'rails', '4.2.0'
 gem 'sass-rails', '>= 3.2'
 gem 'uglifier', '>= 1.3.0'
+gem 'newrelic_rpm'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
 
 group :development, :test do
-  gem 'newrelic_rpm'
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
