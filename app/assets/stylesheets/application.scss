@@ -31,14 +31,39 @@
   //  background-image:asset-url('113H.jpg');
  }
 
+ a:hover {
+   text-decoration: none;
+   opacity: 0.5;
+ }
+
+ a:hover h1,h2,h3,h4{
+   opacity: 0.6;
+ }
+
  h1, h2, h3, h4 {
    opacity: 0.8;
    color: #E74C3C;
+
  }
 
  div.wrapper{
-   margin: 0 20px;
-   margin-bottom: 90px;
+   margin: 0 auto;
+ }
+
+ div.profile-info{
+   padding-top: 90px;
+ }
+
+ div.page-header{
+   text-align: center;
+ }
+
+ div.content{
+   margin-top: 90px;
+ }
+
+ ul.songs-list{
+   padding: 0 20px;
  }
 
  div.foreground-content{
@@ -68,7 +93,8 @@
 }
 
 .list-group-item{
-  background-color:rgba(52,152,219,0.2);
+  background-color:rgba(52,152,219,0.0);
+  border: none;
 }
 
 img {
@@ -132,4 +158,8 @@ div.people{
   display: block;
   float: right;
   text-align: center;
+}
+
+div.follower{
+  padding-top: 20px;
 }

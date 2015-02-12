@@ -94,7 +94,7 @@
     </li>
   </ul>
 
-  <% if(user.id !== $('.wrapper').attr('data-user-id')){ %>
+  <% if(user.id != $('.wrapper').attr('data-user-id')){ %>
     <% if(user.follow().isNew()) { %>
       <button type="button" class="btn btn-default subscribe" data-user-id="<%=user.escape('id') %>">Subscribe</button>
     <% } else { %>
@@ -112,14 +112,18 @@
   </div>
 
   <div class="people">
-    <h3 style="opacity: 0.6;">Followers</h3>
-    <div class="followers">
-    </div>
-    <hr>
+    <% if(user.followers().length != 0) { %>
+      <h3>Followers</h3>
+      <div class="followers">
+      </div>
+      <hr>
+    <% } %>
 
-    <h3 style="opacity: 0.6;">Following</h3>
-    <div class="followings">
-    </div>
-    <hr>
+    <% if(user.followings().length != 0) { %>
+      <h3>Following</h3>
+      <div class="followings">
+      </div>
+      <hr>
+    <% } %>
   </people>
 </div>
