@@ -31,6 +31,24 @@
   //  background-image:asset-url('113H.jpg');
  }
 
+ div.logo-signin{
+   background-image:asset-url("ArpeggioLogo.png");
+   height: 207px;
+   width: 500px;
+   display: block;
+   margin: 0 auto;
+   margin-top: 10px;
+ }
+
+ div.logo-signup{
+   background-image:asset-url("ArpeggioLogo2.png");
+   height: 208px;
+   width: 500px;
+   display: block;
+   margin: 0 auto;
+   margin-top: 10px;
+ }
+
  a:hover {
    text-decoration: none;
    opacity: 0.5;
