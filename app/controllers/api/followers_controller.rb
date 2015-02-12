@@ -1,7 +1,8 @@
+require 'byebug'
 module Api
   class FollowersController < ApiController
     def destroy
-      puts "inside"
+      render json: current_user
     end
   end
 end

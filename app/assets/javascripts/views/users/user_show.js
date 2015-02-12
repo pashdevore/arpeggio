@@ -7,7 +7,10 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.collection = this.model.songs();
-    this.listenTo(this.model, 'sync remove', this.render);
+    this.listenTo(this.model.followers(), "add", this.addFollower);
+    this.listenTo(this.model.followings(), "add", this.addFollowing);
+    // this.listenTo(this.model.follow(), "sync", this.render);
+    this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addSong);
   },
 
@@ -30,10 +33,12 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
 
   renderFollowers: function () {
     this.model.followers().each(this.addFollower.bind(this));
+    console.log("followers rendered");
   },
 
   renderFollowings: function () {
     this.model.followings().each(this.addFollowing.bind(this));
+    console.log("followings rendered");
   },
 
   addSong: function (song) {
@@ -73,18 +78,16 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
     if($(".subscribe").text() === "Subscribe") {
       this.model.follow().save({follower_id: this.model.id}, {
         success: function() {
-          //this.model is John Mayer when subscribing to John Mayer
-          //this.model we are adding is the subscriber (i.e. George Washington)
-          this.model.followings().add(this.model.follow());
+          $('.subscribe').text("Unsubscribe");
+          this.model.followers().add(this.model.follow());
         }.bind(this)
       });
-      //back end will have a followings controller that has a post and destroy
-      //for creating and deleting a follower
     } else {
-      debugger
-      this.model.follow().destroy({follower_id: this.model.id});
-      var model = this.model.followers().get(current_user.id);
-      model.destroy();
+      // this.model.follow().save({follower_id: this.model.id});
+      current_user.followers().remove(this.model);
+      this.model.follow().destroy();
+      $('.subscribe').text("Subscribe");
+      // this.model.followings().remove(this.model.follow());
     }
   }
 });
