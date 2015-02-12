@@ -17,6 +17,7 @@
 //= require jquery.fileupload
 //= require jquery.cloudinary
 //= require jquery.serializejson
+//= require wavesurfer.min
 //= require underscore
 //= require backbone
 //= require arpeggio
