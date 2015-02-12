@@ -11,8 +11,6 @@
 #  updated_at      :datetime         not null
 #
 
-require 'byebug'
-
 class User < ActiveRecord::Base
   attr_reader :password
 
