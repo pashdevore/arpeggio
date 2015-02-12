@@ -15,8 +15,10 @@
  @import "bootstrap";
 
  /* Import additional scss files */
+ @import "stream";
  @import "sessions";
  @import "songs";
+ @import "users";
 
 /* All Root Page CSS */
 
@@ -28,25 +30,6 @@
 
  body {
    background-color: #ECF0F1;
-  //  background-image:asset-url('113H.jpg');
- }
-
- div.logo-signin{
-   background-image:asset-url("ArpeggioLogo.png");
-   height: 207px;
-   width: 500px;
-   display: block;
-   margin: 0 auto;
-   margin-top: 10px;
- }
-
- div.logo-signup{
-   background-image:asset-url("ArpeggioLogo2.png");
-   height: 208px;
-   width: 500px;
-   display: block;
-   margin: 0 auto;
-   margin-top: 10px;
  }
 
  a:hover {
@@ -61,7 +44,6 @@
  h1, h2, h3, h4 {
    opacity: 0.8;
    color: #E74C3C;
-
  }
 
  div.wrapper{
@@ -80,26 +62,6 @@
    margin-top: 90px;
  }
 
- ul.songs-list{
-   padding: 0 20px;
- }
-
- div.foreground-content{
-   background-image:url('/assets/arpeggio_sign_in.png');
-   background-position:center;
-   height: 589px;
-   width: 500px;
-   margin: 0 auto;
- }
-
- audio.song-show-player-footer{
-   margin-top: 10px;
-   display: block;
-   position: relative;
-   margin-left: auto;
-   margin-right: auto;
-   width: inherit;
- }
 
  form.navbar-left {
    width: 100px;
@@ -108,11 +70,6 @@
 .songs-list-wrapper{
   margin-top: 51px;
   padding-top: 20px;
-}
-
-.list-group-item{
-  background-color:rgba(52,152,219,0.0);
-  border: none;
 }
 
 img {
@@ -148,36 +105,4 @@ div.page-header{
 
 div.page-header h1{
   text-align: center;
-}
-
-
-div.profile-info{
-  width: 30%;
-  display: block;
-  float: left;
-  margin: 0 20px;
-  margin-bottom: 90px;
-}
-
-div.content{
-  width: 60%;
-  display: block;
-  float: left;
-}
-
-div.songs{
-  width: 70%;
-  display: block;
-  float: left;
-}
-
-div.people{
-  width: 30%;
-  display: block;
-  float: right;
-  text-align: center;
-}
-
-div.follower{
-  padding-top: 20px;
 }

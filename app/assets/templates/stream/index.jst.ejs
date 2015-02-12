@@ -16,7 +16,7 @@
             <h4 style="display:inline;"><%= song.escape("title") %></h4>
           </a>
 
-          <audio controls>
+          <audio controls style="width: 500px;">
             <source src="<%= song.escape('audio_file_name') %>" type="audio/mpeg">
             <source src="<%= song.escape('audio_file_name') %>" type="audio/mp3">
             <source src="<%= song.escape('audio_file_name') %>" type="audio/m4a">

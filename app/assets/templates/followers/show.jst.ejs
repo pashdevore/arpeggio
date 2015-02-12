@@ -1,4 +1,6 @@
 <% if(follower.escape('avatar_url')){ %>
-  <img src="<%= follower.escape('avatar_url') %>" alt="profile">
+  <a href="#/users/<%=follower.id%>">
+    <img src="<%= follower.escape('avatar_url') %>" alt="profile">
+  </a>
 <% } %>
 <a href="#/users/<%=follower.escape('id')%>"><h3><%= follower.escape('first_name') %> <small><%= follower.escape('last_name') %></small></h3></a>

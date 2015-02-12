@@ -7,7 +7,9 @@
   <% users.each(function(user) { %>
     <div class="avatar">
       <% if(user.escape('avatar_url')){ %>
-        <img src="<%= user.escape('avatar_url') %>" class="img-responsive" alt="profile picture">
+        <a href="#/users/<%= user.id %>">
+          <img src="<%= user.escape('avatar_url') %>" class="img-responsive" alt="profile picture">
+        </a>
       <% } else { %>
         <img src="/assets/missing_gravatar.jpg" class="profile-img img-responsive" alt="profile picture">
       <% } %>

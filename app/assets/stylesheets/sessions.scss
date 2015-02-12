@@ -2,13 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* Sizing of New Session form */
 form {
   width: 300px;
   margin: 0 auto;
 }
 
+/* Sizing of New Users form */
 div.page-header h1 {
   width: 400px;
   margin: 0 auto;
   text-align: center;
+}
+
+div.logo-signin{
+  background-image:asset-url("ArpeggioLogo.png");
+  height: 207px;
+  width: 500px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+div.foreground-content{
+  background-image:url('/assets/arpeggio_sign_in.png');
+  background-position:center;
+  height: 589px;
+  width: 500px;
+  margin: 0 auto;
 }

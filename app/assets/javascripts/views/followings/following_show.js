@@ -1,5 +1,6 @@
 Arpeggio.Views.FollowingShow = Backbone.View.extend({
   template: JST['followings/show'],
+  className: "following",
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);

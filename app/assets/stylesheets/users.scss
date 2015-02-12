@@ -2,7 +2,71 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* Sizing of New Users form */
 form {
   width: 300px;
   margin: 0 auto;
+}
+
+/* Image for New Users url */
+div.logo-signup{
+  background-image:asset-url("ArpeggioLogo2.png");
+  height: 208px;
+  width: 500px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+div.foreground-content{
+  background-image:url('/assets/arpeggio_sign_in.png');
+  background-position:center;
+  height: 589px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+div.content{
+  width: 60%;
+  display: block;
+  float: left;
+}
+
+div.profile-info{
+  width: 30%;
+  display: block;
+  float: left;
+  margin: 0 20px;
+  margin-bottom: 90px;
+}
+
+div.songs{
+  width: 70%;
+  display: block;
+  float: left;
+}
+
+div.people{
+  width: 30%;
+  display: block;
+  float: right;
+  text-align: center;
+}
+
+div.follower{
+  padding-top: 20px;
+}
+
+div.avatar{
+  background-color: rgba(0,0,0,0.5);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+div.avatar:hover{
+  background-color: rgba(0,0,0,0.1);
+}
+
+div.following img:hover{
+  opacity: 0.5;
 }
