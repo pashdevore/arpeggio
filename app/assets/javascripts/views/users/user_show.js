@@ -9,7 +9,6 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
     this.collection = this.model.songs();
     this.listenTo(this.model.followers(), "add", this.addFollower);
     this.listenTo(this.model.followings(), "add", this.addFollowing);
-    // this.listenTo(this.model.follow(), "sync", this.render);
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addSong);
   },
@@ -83,11 +82,9 @@ Arpeggio.Views.UserShow = Backbone.CompositeView.extend({
         }.bind(this)
       });
     } else {
-      // this.model.follow().save({follower_id: this.model.id});
       current_user.followers().remove(this.model);
       this.model.follow().destroy();
       $('.subscribe').text("Subscribe");
-      // this.model.followings().remove(this.model.follow());
     }
   }
 });

@@ -26,6 +26,10 @@
             </audio>
           </div>
 
+          <div id="wave">
+
+          </div>
+
             <!-- Represents number of likes -->
             <!-- <span class="badge">120</span> -->
         </li>
@@ -41,6 +45,21 @@
 </div>
 
 <script>
+
+// var wavesurfer = Object.create(WaveSurfer);
+//
+// wavesurfer.init({
+//   container: document.querySelector('#wave'),
+//   waveColor: 'violet',
+//   progressColor: 'purple'
+// });
+//
+// wavesurfer.on('ready', function () {
+//   wavesurfer.play();
+// });
+//
+// wavesurfer.load('/assets/backinblack.mp3');
+
 $(window).scroll(function (event) {
   if ($(this).scrollTop() > 100) {
     $('.scrollup').fadeIn();

@@ -9,7 +9,7 @@
       <% if(user.id != $('.wrapper').attr('data-user-id')) { %>
       <% if(user.escape('avatar_url')){ %>
         <a href="#/users/<%= user.id %>">
-          <img src="<%= user.escape('avatar_url') %>" class="img-responsive" alt="profile picture">
+          <img src="<%= user.escape('avatar_url') %>" class="profile-img img-responsive" alt="profile picture">
         </a>
       <% } else { %>
         <img src="/assets/missing_gravatar.jpg" class="profile-img img-responsive" alt="profile picture">
