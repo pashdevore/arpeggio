@@ -32,6 +32,27 @@
    background-color: #ECF0F1;
  }
 
+ .navbar{
+   -o-transition: background-color 0.5s;
+   -webkit-transition: background-color 0.5s;
+   -moz-transition: background-color 0.5s;
+   -ms-transition: background-color 0.5s;
+   transition: background-color 0.5s;
+ }
+
+ .navbar:hover{
+   background-color: #E74C3C;
+   border-color: #E74C3C;
+ }
+
+ .navbar:hover a{
+   color: black;
+ }
+
+ .navbar:hover li a{
+   color: black;
+ }
+
  a:hover {
    text-decoration: none;
    opacity: 1.0;
@@ -123,12 +144,15 @@ div.page-header h1{
   text-align: center;
 }
 
+
 li.link:hover{
-  opacity: 0.3;
+  opacity: 1.0;
+  color: black;
 }
 
 .navbar-link:hover{
-  opacity: 0.2;
+  opacity: 1.0;
+  color: black;
 }
 
 .navbar-brand img{
