@@ -114,3 +114,11 @@ li.link:hover{
 .navbar-link:hover{
   opacity: 0.2;
 }
+
+img{
+  box-shadow: 4px 4px 10px #aaaaaa;
+}
+
+.navbar-brand img{
+  box-shadow: none;
+}
