@@ -34,16 +34,32 @@
 
  a:hover {
    text-decoration: none;
-   opacity: 0.5;
+   opacity: 1.0;
  }
 
  a:hover h1,h2,h3,h4{
-   opacity: 0.6;
+   opacity: 1.0;
  }
 
  h1, h2, h3, h4 {
+   display: block;
    opacity: 0.8;
    color: #E74C3C;
+   transition: font-size .25s ease, padding .25s ease, margin .25s ease;
+ }
+
+ h1:hover{
+   opacity: 1.0;
+ }
+
+ .img-rounded{
+   transition: width .25s ease, height .25s ease;
+   height: 90%;
+   box-shadow: 4px 4px 10px #aaaaaa;
+ }
+
+ .img-rounded:hover{
+  height: 95%;
  }
 
  div.wrapper{
@@ -113,10 +129,6 @@ li.link:hover{
 
 .navbar-link:hover{
   opacity: 0.2;
-}
-
-img{
-  box-shadow: 4px 4px 10px #aaaaaa;
 }
 
 .navbar-brand img{
