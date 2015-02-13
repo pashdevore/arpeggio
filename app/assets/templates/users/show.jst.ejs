@@ -127,3 +127,23 @@
     <% } %>
   </people>
 </div>
+<div>
+  <a class="scrollup" href="#">↑</span></a>
+</div>
+
+<script>
+$(window).scroll(function (event) {
+  if ($(this).scrollTop() > 100) {
+    $('.scrollup').fadeIn();
+  } else {
+    $('.scrollup').fadeOut();
+  }
+});
+
+$('.scrollup').click(function () {
+  $("html, body").animate({
+    scrollTop: 0
+  }, 600);
+  return false;
+});
+</script>

@@ -163,3 +163,14 @@ div.songs{
   height: 100%;
   border-right: 1px solid lightgrey;
 }
+
+.scrollup{
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 50px;
+  right: 100px;
+  display: none;
+  font-size: 20pt;
+  text-align: center;
+}
