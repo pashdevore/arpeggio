@@ -6,6 +6,8 @@
   <ul class="users-list list-group">
   <% users.each(function(user) { %>
     <div class="avatar">
+      <% debugger %>
+      <% if(user.id != $('.wrapper').attr('data-user-id')) { %>
       <% if(user.escape('avatar_url')){ %>
         <a href="#/users/<%= user.id %>">
           <img src="<%= user.escape('avatar_url') %>" class="img-responsive" alt="profile picture">
@@ -33,6 +35,7 @@
         <a href="<%= user.escape('website_url') %>"><%= user.escape('website_url') %></a>
       </h4>
     </li>
+    <% } %>
   <% }) %>
   </ul>
 </div>
